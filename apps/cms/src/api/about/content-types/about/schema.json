@@ -1,0 +1,69 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "birthDay": {
+      "type": "date"
+    },
+    "overview": {
+      "type": "text"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "altPhoneNumber": {
+      "type": "string"
+    },
+    "contactCta": {
+      "type": "string"
+    },
+    "professionalSummary": {
+      "type": "richtext"
+    },
+    "technicalExpertise": {
+      "type": "richtext"
+    },
+    "educationalBackground": {
+      "type": "blocks"
+    },
+    "leadershipExperience": {
+      "type": "richtext"
+    },
+    "professionalGoals": {
+      "type": "blocks"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "openGraph": {
+      "type": "component",
+      "component": "shared.open-graph",
+      "repeatable": false
+    },
+    "socialLinks": {
+      "type": "component",
+      "component": "shared.social-link",
+      "repeatable": true
+    }
+  }
+}

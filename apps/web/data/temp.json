@@ -1,0 +1,68 @@
+[
+{
+    "name": "SAS GENERAL CONTRACTING ",
+    "client": "SAS GENERAL CONTRACTING ",
+    "description": "SAS General Contracting & Trading Est. was established in the year 2020, in the Kingdom of Saudi Arabia. A 100% Saudi owned organization, initially started by opening Trading & Contracting Establishment. Based in Al-Jubail city to needs of limited customers. Now, it is considered as one of the leading companies in the Kingdom especially in the Eastern Province",
+    "id": "2",
+    "screenShots": ["/projects/sas/sas.png"],
+    "primaryColor": "#ED1B33",
+    "status": "Finished",
+    "type": [
+        "Landing Page"
+    ],
+    "workInformation": "I Worked on it as a <a class='dark:text-white text-primary'>Freelancer</a> for Sudian Company",
+    "technologiesIcons": [
+        "/icons/nuxt.svg",
+        "/icons/tailwind.webp"
+    ],
+    "year": "2022",
+    "gitRepo": "",
+    "url": ""
+},
+
+{
+    "name": "Qr Code Germany",
+    "client": "ELKOOD Company",
+    "description": "Many companies use the QR code in their marketing and advertising campaigns, allowing various types of data to be added, such as: B. Website links, social media, account information, phone numbers, even coupons, opening hours, or a PDF file (with a list of product prices or the services you want to offer your customers).Here at QR Code Germany we have made sure that everything is easy and simple to use for the customer as you will find many simple and useful options that will help you a lot in providing useful and important information to your customers in the easiest and cheapest way to deliver way.",
+    "id": "1",
+    "screenShots": ["https://drive.google.com/file/d/1sKVh-fIDjidvZ0VjQb6_fJs39jU4EWu7/view?usp=drive_link"],
+    "primaryColor": "#FDD636",
+    "status": "in Progress",
+    "type": [
+        "Landing Page",
+        "Web Application"
+    ],
+    "workInformation": "",
+    "technologiesIcons": [
+        "/icons/nuxt.svg",
+        "/icons/tailwind.webp"
+    ],
+    "year": "2022",
+    "gitRepo": "www.com",
+    "url": ""
+},
+
+{
+    "name": "Vue Admin Dashboard",
+    "client": "ELKOOD Company",
+    "description": "",
+    "id": "7",
+    "screenShots": ["/projects/vueAdminDashboard/cover.jpg"],
+    "primaryColor": "#004A9F",
+    "status": "in Progress",
+    "type": [
+        "eCommerce",
+        "Dashboard"
+    ],
+    "workInformation": "I Worked on it as Vue Developer at <span class='dark:text-white text-primary font-bold '> Elkood </span> frontend  team ",
+    "technologiesIcons": [
+        "/icons/vue.webp",
+        "/icons/tailwind.webp"
+    ],
+    "year": "2022",
+    "gitRepo": "",
+    "url": ""
+}
+
+
+]
