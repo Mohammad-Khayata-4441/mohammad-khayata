@@ -54,9 +54,9 @@
     },
     "skills": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::skill.skill",
-      "mappedBy": "project"
+      "mappedBy": "projects"
     },
     "url": {
       "type": "string"

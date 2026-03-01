@@ -725,7 +725,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     repo: Schema.Attribute.String;
     seo: Schema.Attribute.Component<'shared.seo', false>;
-    skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
+    skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'title'>;
     technologies: Schema.Attribute.Relation<
       'manyToMany',
@@ -784,7 +784,7 @@ export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'> &
       Schema.Attribute.Private;
-    project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
+    projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     technologies: Schema.Attribute.Relation<
       'oneToMany',
