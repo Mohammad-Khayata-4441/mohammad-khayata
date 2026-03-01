@@ -728,7 +728,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'title'>;
     technologies: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::technology.technology'
     >;
     title: Schema.Attribute.String;
@@ -849,7 +849,7 @@ export interface ApiTechnologyTechnology extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
-    project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
+    projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     skill: Schema.Attribute.Relation<'manyToOne', 'api::skill.skill'>;
     updatedAt: Schema.Attribute.DateTime;

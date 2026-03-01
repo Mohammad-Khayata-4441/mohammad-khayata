@@ -48,9 +48,9 @@
     },
     "technologies": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::technology.technology",
-      "mappedBy": "project"
+      "mappedBy": "projects"
     },
     "skills": {
       "type": "relation",
