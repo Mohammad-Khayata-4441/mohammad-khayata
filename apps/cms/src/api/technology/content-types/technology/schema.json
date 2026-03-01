@@ -35,6 +35,12 @@
         "videos",
         "audios"
       ]
+    },
+    "experiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::experience.experience",
+      "mappedBy": "technologies"
     }
   }
 }

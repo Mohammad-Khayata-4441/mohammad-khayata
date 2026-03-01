@@ -43,6 +43,12 @@
       "type": "component",
       "component": "shared.open-graph",
       "repeatable": false
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "posts"
     }
   }
 }

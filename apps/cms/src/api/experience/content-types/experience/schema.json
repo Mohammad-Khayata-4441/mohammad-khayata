@@ -50,6 +50,12 @@
       "relation": "oneToMany",
       "target": "api::project.project",
       "mappedBy": "experience"
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::technology.technology",
+      "inversedBy": "experiences"
     }
   }
 }

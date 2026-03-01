@@ -79,6 +79,16 @@
       "type": "component",
       "component": "shared.open-graph",
       "repeatable": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "projects"
     }
   }
 }
