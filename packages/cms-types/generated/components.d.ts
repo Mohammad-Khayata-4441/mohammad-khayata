@@ -93,6 +93,17 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTextList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_text_lists';
+  info: {
+    displayName: 'Text List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -100,6 +111,7 @@ declare module '@strapi/strapi' {
       'shared.open-graph': SharedOpenGraph;
       'shared.seo': SharedSeo;
       'shared.social-link': SharedSocialLink;
+      'shared.text-list': SharedTextList;
     }
   }
 }

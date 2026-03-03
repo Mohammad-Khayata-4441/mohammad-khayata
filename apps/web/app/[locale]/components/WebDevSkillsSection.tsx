@@ -1,6 +1,6 @@
 import Animator from "@/app/components/Animator";
 import SpotlightCard from "@/app/components/SpotlightCard/SpotlightCard";
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from "@/shared/components/SectionTitle";
 import Image from "next/image";
 
 export const WebDevSkillsSection = () => {
@@ -25,7 +25,7 @@ export const WebDevSkillsSection = () => {
 
   return (
     <section>
-      <div className="overflow-hidden mx-auto grid grid-cols-1 max-w-screen-xl px-4 md:px-0">
+      <div className="overflow-hidden mx-auto grid grid-cols-1 max-w-(--breakpoint-xl) px-4 md:px-0">
         <SectionTitle
           title="Web Development Skills"
           subtitle="I Utilize the most powerful technologies to save your time and build modern , high-performance and scalable web applications."
@@ -37,7 +37,7 @@ export const WebDevSkillsSection = () => {
                 <Animator variant="scale-down" key={index}>
                   <SpotlightCard
                     spotlightColor={skill.color as any}
-                    className="glass-paper p-8 rounded-xl flex justify-center items-center"
+                    className="glass-paper rounded-xl flex justify-center items-center"
                   >
                     <div className="relative aspect-square p-8">
                       <Image

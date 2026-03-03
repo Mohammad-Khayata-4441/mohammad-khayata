@@ -1,10 +1,10 @@
 import Animator from "@/app/components/Animator";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 
 export const PersonalInfoSection = () => (
-  <section className="overflow-hidden mx-auto max-w-screen-xl px-4 md:px-0">
+  <section className="overflow-hidden mx-auto max-w-(--breakpoint-xl) px-4 md:px-0">
     <Animator>
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-24 text-slate-800 dark:text-slate-100">
         Personal Information

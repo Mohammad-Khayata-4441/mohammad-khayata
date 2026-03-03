@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils"
+  ;
 import type { ComponentProps, CSSProperties, ReactNode } from "react";
 
 export const GlowText = ({

@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { generatePageMetadata, generateStructuredData } from "@/lib/metaData";
 import { resume } from "@/data/resume";
+import { generatePageMetadata, generateStructuredData } from "@/shared/lib/metaData";
 
 export const metadata: Metadata = {
   ...generatePageMetadata({

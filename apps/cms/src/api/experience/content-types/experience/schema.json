@@ -56,6 +56,11 @@
       "relation": "manyToMany",
       "target": "api::technology.technology",
       "inversedBy": "experiences"
+    },
+    "achievements": {
+      "type": "component",
+      "component": "shared.text-list",
+      "repeatable": true
     }
   }
 }

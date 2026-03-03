@@ -1,13 +1,13 @@
 import Animator from "@/app/components/Animator";
 import HeroSvg from "@/app/components/HeroSvg";
 import GradientText from "@/app/components/text/GradientText/GradientText";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import { Link } from "@/i18n";
 import { CiStar, CiGrid41 } from "react-icons/ci";
 
 export const HeroSection = () => (
   <section className="overflow-hidden h-screen flex items-center" id="hero">
-    <div className="hero container mx-auto px-4 max-w-screen-xl flex flex-wrap-reverse lg:flex-nowrap items-center justify-center flex-col-reverse lg:flex-row">
+    <div className="hero container mx-auto px-4 max-w-(--breakpoint-xl) flex flex-wrap-reverse lg:flex-nowrap items-center justify-center flex-col-reverse lg:flex-row">
       <div className="hero-text grow flex flex-col justify-center items-center lg:items-start lg:justify-start space-y-4">
         <Animator>
           <p className="text-3xl hidden lg:block text-slate-400 dark:text-gray-300">

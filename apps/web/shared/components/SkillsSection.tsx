@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const SkillsSection = () => {
   return (
-    <section className="container max-w-screen-xl">
+    <section className="container max-w-(--breakpoint-xl)">
       <Animator>
         <h3 className="text-center my-8 text-primary-foreground text-3xl font-bold">
           Web Development Skills

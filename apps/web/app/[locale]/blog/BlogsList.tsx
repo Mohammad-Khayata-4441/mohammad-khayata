@@ -1,16 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/shared/components/ui/avatar";
+import { Badge } from "@/shared/components/ui/badge";
+import { Button } from "@/shared/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "@/shared/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/components/ui/tabs";
 import {
   BookOpen,
   Calendar,
@@ -49,7 +49,7 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
 
   return (
     <div>
-      <div className="container max-w-screen-xl mx-auto">
+      <div className="container max-w-(--breakpoint-xl) mx-auto">
         <Tabs defaultValue="all" className="mb-8">
           <div className="flex items-center justify-between my-4">
             <h2 className="text-4xl font-bold tracking-tight text-primary-foreground">

@@ -15,14 +15,14 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+} from "@/shared/components/ui/card";
+import { Badge } from "@/shared/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/shared/components/ui/accordion";
 import { BorderTrail } from "./ui/BorderTrail";
 import { resume } from "@/data/resume";
 
@@ -48,17 +48,15 @@ export default function ExperienceTimeline() {
           initial={{ x: index % 2 === 0 ? "50%" : "-50%", scale: 0 }}
           whileInView={{ x: "0%", scale: 1 }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
-          className={`relative mb-12 md:mb-16 ${
-            index % 2 !== 0
-              ? "md:pl-12 md:ml-auto md:ml-1/2"
-              : "md:pr-12 md:mr-auto md:mr-1/2"
-          } md:w-1/2 `}
+          className={`relative mb-12 md:mb-16 ${index % 2 !== 0
+            ? "md:pl-12 md:ml-auto md:ml-1/2"
+            : "md:pr-12 md:mr-auto md:mr-1/2"
+            } md:w-1/2 `}
         >
           {/* Timeline dot */}
           <div
-            className={`h-[1px] hidden md:block border-dashed w-12 absolute glass-paper top-1/2 ${
-              index % 2 == 0 ? "right-0" : "left-0"
-            }`}
+            className={`h-px hidden md:block border-dashed w-12 absolute glass-paper top-1/2 ${index % 2 == 0 ? "right-0" : "left-0"
+              }`}
           ></div>
 
           <Card
@@ -125,7 +123,7 @@ export default function ExperienceTimeline() {
                       <ul className="mt-2 space-y-1.5 text-sm">
                         {project.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start">
-                            <CheckCircle className="h-4 w-4 mr-2 text-green-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-4 w-4 mr-2 text-green-500 mt-0.5 shrink-0" />
                             <span className="text-slate-600 dark:text-slate-300">
                               {achievement}
                             </span>

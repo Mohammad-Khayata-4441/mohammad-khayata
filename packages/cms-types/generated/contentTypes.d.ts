@@ -552,6 +552,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    achievements: Schema.Attribute.Component<'shared.text-list', true>;
     company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

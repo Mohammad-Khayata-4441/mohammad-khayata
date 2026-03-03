@@ -1,4 +1,3 @@
-import { PortfolioItem } from '@/types/PortfolioItem'
 const projects: any[] = [
 
     {

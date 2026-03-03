@@ -1,7 +1,8 @@
 "use client";
-import { useActiveLink } from "@/hooks/useActivePath";
 import { Link } from "@/i18n";
+import { useActiveLink } from "@/shared/hooks/useActivePath";
 import { Newspaper } from "lucide-react";
+import { SlidingCapsuleNav } from "@/components/satisui/sliding-capsule-nav";
 import {
   BsGithub,
   BsInstagram,
@@ -43,38 +44,24 @@ const MyComponent: React.FC = () => {
     },
   ];
 
+  const activeTab = navLinks.find(link => isActivePath(link.path))?.path || "/";
+
   return (
     <header className="flex  fixed bottom-0 md:top-0 md:bottom-auto w-screen items-center justify-center  p-5 z-10">
       <div className="content hidden md:block col-span-3"></div>
 
-      <nav className="rounded-2xl col-span-12 sm:col-span-8 px-8 glass-paper py-2 md:py-0 md:px-28 backdrop-blur-xl border border-text hover:scale-[1.01] hover:border-secondary transition duration-[3000ms] hover:shadow-2xl">
-        <ul className="flex items-center justify-center list-none space-x-8 sm:space-x-12 md:space-x-16">
-          {navLinks.map((item) => (
-            <li
-              key={item.path}
-              className={
-                "text-text  font-bold transition " +
-                `${
-                  isActivePath(item.path)
-                    ? "nav-link-active"
-                    : "hover:text-white"
-                }`
-              }
-            >
-              <Link
-                href={item.path}
-                className='className="py-2 md:py-6 flex space-x-1 items-center select-none"'
-              >
-                {/* Assuming Icon is another component */}
-                <item.icon className="text-4xl md:text-2xl select-none" />
-                <span className="font-semibold hidden md:inline">
-                  {item.title}{" "}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="col-span-12 sm:col-span-8 flex justify-center w-full max-w-fit">
+        <SlidingCapsuleNav
+          tabs={navLinks.map((item) => ({
+            title: item.title,
+            url: item.path,
+            icon: <item.icon className="text-2xl md:text-xl select-none" />,
+          }))}
+          currentTab={activeTab}
+          className="rounded-2xl px-2 glass-paper py-2 md:py-2 md:px-8 backdrop-blur-xl border border-text hover:scale-[1.01] hover:border-secondary transition duration-3000 hover:shadow-2xl"
+          tabClassName="py-2 md:py-2 flex space-x-1 items-center select-none font-bold !bg-transparent"
+        />
+      </div>
 
       <div className="content hidden col-span-3 lg:flex justify-end">
         <ul className="flex items-center gap-8 flex-col fixed right-5 top-1/2 -translate-y-1/2">

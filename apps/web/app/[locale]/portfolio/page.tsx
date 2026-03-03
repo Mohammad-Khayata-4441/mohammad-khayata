@@ -2,12 +2,11 @@ import LightsGenerator from "@/app/components/LightsGenerator";
 import React from "react";
 // import projects from '@/data/projects'
 import { NextPage } from "next";
-import { type PortfolioItem as PortfolioItemType } from "@/types/PortfolioItem";
-import ProjectDetails from "./ProjectDetails";
 import PortfolioItem from "./PortfolioItem";
-import BlurAppearVariant1, { MotionWrapper } from "@/components/MotionWrapper";
-import { generatePageMetadata } from "@/lib/metaData";
 import { resume } from "@/data/resume";
+import { generatePageMetadata } from "@/shared/lib/metaData";
+import { getPortfolio } from "@/services/portfolio";
+import { MotionWrapper } from "@/shared/components/MotionWrapper";
 export const metadata = generatePageMetadata({
   title: "Portfolio",
   description: `Explore ${resume.seo.projectsCompleted}+ professional projects by ${resume.contact.name}. Featuring enterprise applications, e-commerce platforms, ERP systems, and modern web solutions built with React.js, Vue.js, Next.js, and cutting-edge technologies.`,
@@ -27,64 +26,16 @@ export const metadata = generatePageMetadata({
 });
 
 const page: NextPage = async () => {
-  // const supabase = await createClient();
+
+  const portfolio = await getPortfolio();
+  const projects = portfolio.data.projects;
   // let { data: projects, error } = await supabase
   //   .from("projects")
   //   .select<string, PortfolioItemType>(`* , project_skills(id,  skills(*))`);
 
-  let projects: PortfolioItemType[] = [];
+  // let projects: PortfolioItemType[] = [];
 
-  // Check if Supabase environment variables are available
-  if (!process.env.SUPABASE_ANON_KEY) {
-    console.warn("SUPABASE_ANON_KEY not found. Using fallback projects data.");
-    // Fallback to local projects data if available
-    try {
-      const { default: fallbackProjects } = await import("@/data/projects");
-      projects = fallbackProjects || [];
-    } catch (e) {
-      console.warn("No fallback projects data available");
-      projects = [];
-    }
-  } else {
-    try {
-      const response = await fetch(
-        "https://ruhmvzueumswzfdbjlto.supabase.co/rest/v1/projects?select=*,project_skills(id,skills(*))&order=order",
-        {
-          headers: {
-            apikey: process.env.SUPABASE_ANON_KEY,
-            "Content-Type": "application/json",
-          },
-        }
-      );
 
-      if (response.ok) {
-        const data = await response.json();
-        projects = Array.isArray(data) ? data : [];
-      } else {
-        console.error(
-          "Failed to fetch projects:",
-          response.status,
-          response.statusText
-        );
-        // Try fallback on API failure
-        try {
-          const { default: fallbackProjects } = await import("@/data/projects");
-          projects = fallbackProjects || [];
-        } catch (e) {
-          console.warn("No fallback projects data available");
-        }
-      }
-    } catch (error) {
-      console.error("Error fetching projects:", error);
-      // Try fallback on network error
-      try {
-        const { default: fallbackProjects } = await import("@/data/projects");
-        projects = fallbackProjects || [];
-      } catch (e) {
-        console.warn("No fallback projects data available");
-      }
-    }
-  }
 
   return (
     <>
@@ -95,12 +46,11 @@ const page: NextPage = async () => {
           <div className=" px-4 mx-auto space-y-24">
             {projects && projects.length > 0 ? (
               projects.map((item) => (
-                <MotionWrapper key={item.id}>
+                <MotionWrapper key={item.documentId ?? item.id}>
                   <PortfolioItem
                     item={item}
                     className="items-center"
-                    data-aos-duration={1000}
-                  ></PortfolioItem>
+                  />
                 </MotionWrapper>
               ))
             ) : (

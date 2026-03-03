@@ -1,5 +1,5 @@
 import LightsGenerator from "@/app/components/LightsGenerator";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import { AiOutlineMessage } from "react-icons/ai";
 import {
   BsFacebook,
@@ -10,8 +10,8 @@ import {
   BsWhatsapp,
 } from "react-icons/bs";
 import { CiAt, CiPhone } from "react-icons/ci";
-import { generatePageMetadata } from "@/lib/metaData";
-import { resume } from "@/data/resume";
+ import { resume } from "@/data/resume";
+import { generatePageMetadata } from "@/shared/lib/metaData";
 
 export const metadata = generatePageMetadata({
   title: "Contact",
@@ -156,7 +156,7 @@ export default function page() {
                     id="name"
                     type="text"
                     placeholder="John Doe"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 transition-all duration-700"
+                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-hidden focus:ring-3 focus:ring-opacity-40 transition-all duration-700"
                   />
                 </div>
 
@@ -169,7 +169,7 @@ export default function page() {
                     name="email"
                     type="email"
                     placeholder="johndoe@example.com"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 transition-all duration-700"
+                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-hidden focus:ring-3 focus:ring-opacity-40 transition-all duration-700"
                   />
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function page() {
                   id="message"
                   name="message"
                   className="
-                                block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 transition-all duration-700"
+                                block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-hidden focus:ring-3 focus:ring-opacity-40 transition-all duration-700"
                   placeholder="Message"
                 ></textarea>
               </div>

@@ -1,6 +1,6 @@
 "use client";
+import { useGsap } from "@/shared/hooks/useGsap";
 import React, { useEffect, useRef, useState } from "react";
-import { useGsap } from "@/hooks/useGsap";
 
 const LightsGenerator: React.FC = () => {
   const [lightsCount, setLightsCount] = useState(2);
@@ -47,7 +47,7 @@ const LightsGenerator: React.FC = () => {
   return (
     <div
       ref={lightsContainerRef as any}
-      className="page-lights dark:block absolute top-0 left-0 h-full flex-grow-1 overflow-x-hidden overflow-hidden"
+      className="page-lights dark:block absolute top-0 left-0 h-full grow overflow-x-hidden overflow-hidden"
     >
       {[...Array(lightsCount)].map((_, index) => (
         <svg

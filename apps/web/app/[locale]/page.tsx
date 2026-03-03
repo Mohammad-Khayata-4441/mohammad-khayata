@@ -1,12 +1,12 @@
 import LightsGenerator from "@/app/components/LightsGenerator";
 import { BioShowcase } from "../components/Overview";
-import { generatePageMetadata } from "@/lib/metaData";
-import { resume } from "@/data/resume";
+ import { resume } from "@/data/resume";
 import { HeroSection } from "./components/HeroSection";
 import { PersonalInfoSection } from "./components/PersonalInfoSection";
 import { WebDevSkillsSection } from "./components/WebDevSkillsSection";
 import { AchievementsSection } from "./components/AchievementsSection";
 import { ExperienceSection } from "./components/ExperienceSection";
+import { generatePageMetadata } from "@/shared/lib/metaData";
 export const metadata = generatePageMetadata({
   title: "Home",
   description: `${resume.seo.description} View my portfolio showcasing ${resume.seo.projectsCompleted}+ projects including enterprise applications, e-commerce platforms, and ERP systems.`,
@@ -31,7 +31,7 @@ const Home = () => {
         <HeroSection />
         <PersonalInfoSection />
         <section>
-          <div className="overflow-hidden max-w-screen-md mx-auto">
+          <div className="overflow-hidden max-w-(--breakpoint-md) mx-auto">
             <div className="relative">
               <BioShowcase />
             </div>

@@ -1,13 +1,13 @@
 import Animator from "@/app/components/Animator";
 import SpotlightCard from "@/app/components/SpotlightCard/SpotlightCard";
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from "@/shared/components/SectionTitle";
 import { BiDevices } from "react-icons/bi";
 import { HiCode } from "react-icons/hi";
 import { MdSpeed, MdOutlineAutoAwesomeMotion } from "react-icons/md";
 
 export const AchievementsSection = () => (
   <section>
-    <div className="container max-w-screen-xl px-4 md:px-0 mx-auto">
+    <div className="container max-w-(--breakpoint-xl) px-4 md:px-0 mx-auto">
       <SectionTitle
         title="What will we achieve together?"
         subtitle="Elevating your web presence with high-performance, visually stunning, and engaging experiences."
