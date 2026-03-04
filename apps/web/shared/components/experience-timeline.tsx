@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 import {
   Briefcase,
@@ -8,7 +9,21 @@ import {
   MapPin,
   ExternalLink,
   CheckCircle,
+  Building,
+  ArrowUpRight,
+  EyeIcon,
 } from "lucide-react";
+import {
+  Timeline,
+  TimelineItem,
+  TimelineConnector,
+  TimelineIcon,
+  TimelineContent,
+  TimelineHeader,
+  TimelineTime,
+  TimelineTitle,
+  TimelineBody,
+} from "./ui/timeline";
 import {
   Card,
   CardContent,
@@ -23,121 +38,206 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/shared/components/ui/accordion";
-import { BorderTrail } from "./ui/BorderTrail";
-import { resume } from "@/data/resume";
+import type { HomeData } from "@/services/home";
 
-export default function ExperienceTimeline() {
-  const [expandedCompany, setExpandedCompany] = useState<string | null>(null);
+interface ExperienceTimelineProps {
+  experiences?: HomeData['experiences'];
+}
 
-  const toggleCompany = (company: string) => {
-    setExpandedCompany(expandedCompany === company ? null : company);
+export default function ExperienceTimeline({ experiences = [] }: ExperienceTimelineProps) {
+  if (!experiences || experiences.length === 0) {
+    return (
+      <div className="text-center py-8">
+        <p className="text-muted-foreground">No experience data available.</p>
+      </div>
+    );
+  }
+
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return 'Present';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'short' 
+    });
   };
 
   return (
     <div className="relative">
-      {/* Timeline line */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-300 dark:bg-slate-700 transform -translate-x-1/2 md:translate-x-0 -z-10"
-      ></motion.div>
+      <Timeline variant="alternating" className="max-w-8xl mx-auto">
+        {experiences.map((experience, index) => (
+          <TimelineItem key={experience.documentId || index}>
+            <TimelineConnector>
+              <TimelineIcon icon={Briefcase} />
+            </TimelineConnector>
+            
+            <TimelineContent>
+              <Card className="glass-paper shadow-md hover:shadow-lg transition-all duration-300 group">
+                <CardHeader className="pb-4">
+                  <div className={`flex items-start gap-4`}>
+                    <div className="flex-1 text-start">
+                      <TimelineTitle className="text-2xl font-bold gradient-heading mb-2 text-start">
+                        {experience.company}
+                      </TimelineTitle>
+                      <CardDescription className="text-lg font-medium text-slate-700 dark:text-slate-300 text-start">
+                        {experience.jobTitle}
+                      </CardDescription>
+                    </div>
+                    
+                    <div className="flex items-center gap-3 shrink-0">
+                      <Badge
+                        variant="outline"
+                        className="flex border-primary text-xs text-primary items-center gap-1 px-3 py-1"
+                      >
+                        <Calendar className="h-3.5 w-3.5" />
+                        <span>
+                          {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
+                        </span>
+                      </Badge>
+                      
+                      <Link 
+                        href={`/experience/${experience.documentId}`}
+                        className="p-2 rounded-full bg-secondary/20 hover:bg-secondary/30 transition-colors group/link"
+                        title="View Experience Details"
+                      >
+                        <ArrowUpRight className="h-4 w-4 text-secondary group-hover/link:text-primary transition-colors" />
+                      </Link>
+                    </div>
+                  </div>
+                  
+                  {experience.location && (
+                    <div className="flex items-center mt-3 text-sm text-slate-500 dark:text-slate-400 text-start">
+                      <MapPin className="h-4 w-4 mr-2" />
+                      <span>{experience.location}</span>
+                      {experience.isRemote && (
+                        <Badge variant="secondary" className="ml-2 text-xs">
+                          Remote
+                        </Badge>
+                      )}
+                    </div>
+                  )}
+                </CardHeader>
 
-      {resume.experience.map((experience, index) => (
-        <motion.div
-          key={experience.company}
-          initial={{ x: index % 2 === 0 ? "50%" : "-50%", scale: 0 }}
-          whileInView={{ x: "0%", scale: 1 }}
-          transition={{ type: "spring", stiffness: 100, damping: 20 }}
-          className={`relative mb-12 md:mb-16 ${index % 2 !== 0
-            ? "md:pl-12 md:ml-auto md:ml-1/2"
-            : "md:pr-12 md:mr-auto md:mr-1/2"
-            } md:w-1/2 `}
-        >
-          {/* Timeline dot */}
-          <div
-            className={`h-px hidden md:block border-dashed w-12 absolute glass-paper top-1/2 ${index % 2 == 0 ? "right-0" : "left-0"
-              }`}
-          ></div>
-
-          <Card
-            className="
-              w-full
-              glass-paper 
-              md:ml-0 overflow-hidden 
-          shadow-md hover:shadow-lg transition-shadow duration-300"
-          >
-            <CardHeader className="pb-2">
-              <div className="flex justify-between items-start">
-                <div>
-                  <CardTitle className="text-2xl font-bold text-white">
-                    {experience.company}
-                  </CardTitle>
-                  <CardDescription className="text-lg font-medium text-slate-700 dark:text-slate-300">
-                    {experience.position}
-                  </CardDescription>
-                </div>
-                <Badge
-                  variant="outline"
-                  className="flex border-primary text-xs text-primary items-center gap-1 px-2 py-1"
-                >
-                  <Calendar className="h-3.5 w-3.5" />
-                  <span>
-                    {experience.startYear} - {experience.endYear}
-                  </span>
-                </Badge>
-              </div>
-              {experience.location && (
-                <div className="flex items-center mt-2 text-sm text-slate-500 dark:text-slate-400">
-                  <MapPin className="h-4 w-4 mr-1" />
-                  <span>{experience.location}</span>
-                </div>
-              )}
-            </CardHeader>
-
-            <CardContent className="pt-4">
-              <Accordion type="single" collapsible className="w-full">
-                {experience.projects.map((project, projectIndex) => (
-                  <AccordionItem
-                    key={projectIndex}
-                    className="border-none bg-seconadry/5 px-4 rounded mb-2"
-                    value={`${experience.company}-${projectIndex}`}
-                  >
-                    <AccordionTrigger className="text-left  font-medium hover:no-underline">
-                      <div className="flex items-center">
-                        <Briefcase className="h-4 w-4 mr-2 text-seconadry" />
-                        <span>{project.title}</span>
-                        {project.url && (
-                          <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="ml-2 text-primary hover:text-primary/80"
-                            onClick={(e) => e.stopPropagation()}
+                {(experience.projects && experience.projects.length > 0) && (
+                  <CardContent className="pt-0">
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider text-start">
+                        Projects
+                      </h4>
+                      
+                      <Accordion type="single" collapsible className="w-full">
+                        {experience.projects.map((project, projectIndex) => (
+                          <AccordionItem
+                            key={project.documentId || projectIndex}
+                            className="border-none bg-secondary/10 px-4 rounded-lg mb-2"
+                            value={`${experience.documentId}-${projectIndex}`}
                           >
-                            <ExternalLink className="h-3.5 w-3.5" />
-                          </a>
-                        )}
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="mt-2 space-y-1.5 text-sm">
-                        {project.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start">
-                            <CheckCircle className="h-4 w-4 mr-2 text-green-500 mt-0.5 shrink-0" />
-                            <span className="text-slate-600 dark:text-slate-300">
-                              {achievement}
-                            </span>
-                          </li>
+                            <AccordionTrigger className="text-left font-medium hover:no-underline py-3 text-start">
+                              <div className="flex items-center justify-between w-full pr-4">
+                                <div className="flex items-center text-start">
+                                  <Building className="h-4 w-4 mr-2 text-secondary" />
+                                  <span className="text-start">{project.title}</span>
+                                </div>
+                                
+                                <div className="flex items-center gap-3">
+                                  {project.url && (
+                                    <a
+                                      href={project.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="p-1.5 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors group/link"
+                                      onClick={(e) => e.stopPropagation()}
+                                      title="Visit External Link"
+                                    >
+                                      <ExternalLink className="h-3.5 w-3.5 text-primary" />
+                                    </a>
+                                  )}
+                                  
+                                  {project.slug && (
+                                    <Link 
+                                      href={`/projects/${project.slug}`}
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="p-1.5 rounded-full bg-accent/20 hover:bg-accent/30 transition-colors group/link"
+                                      title="View Project Details"
+                                    >
+                                      <EyeIcon className="h-3.5 w-3.5   group-hover/link:text-primary transition-colors" />
+                                    </Link>
+                                  )}
+                                </div>
+                              </div>
+                            </AccordionTrigger>
+                            
+                            <AccordionContent>
+                              <div className="mt-2 space-y-3 text-start">
+                                {project.company && project.company !== experience.company && (
+                                  <div className="text-sm text-start">
+                                    <span className="font-medium text-muted-foreground">Client: </span>
+                                    <span className="text-foreground">{project.company}</span>
+                                  </div>
+                                )}
+                                
+                                {project.date && (
+                                  <div className="text-sm text-start">
+                                    <span className="font-medium text-muted-foreground">Date: </span>
+                                    <span className="text-foreground">
+                                      {new Date(project.date).toLocaleDateString('en-US', { 
+                                        year: 'numeric', 
+                                        month: 'long' 
+                                      })}
+                                    </span>
+                                  </div>
+                                )}
+                                
+                                {project.overview && (
+                                  <div 
+                                    className="text-sm text-muted-foreground prose prose-sm max-w-none text-start"
+                                    dangerouslySetInnerHTML={{ __html: project.overview }}
+                                  />
+                                )}
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
                         ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
+                      </Accordion>
+                    </div>
+                  </CardContent>
+                )}
+
+                {(experience.achievements && experience.achievements.length > 0) && (
+                  <CardContent className={experience.projects?.length ? "pt-4 border-t" : "pt-0"}>
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10 border border-green-500/20">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                        </div>
+                        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider text-start">
+                          Key Achievements
+                        </h4>
+                      </div>
+                      
+                      <div className="grid gap-3">
+                        {experience.achievements.map((achievement, i) => (
+                          <div 
+                            key={i} 
+                            className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-green-500/5 to-transparent border-l-2 border-green-500/30 hover:from-green-500/10 transition-all duration-200"
+                          >
+                            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 shrink-0 mt-0.5">
+                              <CheckCircle className="h-3.5 w-3.5 text-green-500" />
+                            </div>
+                            <span className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-start">
+                              {achievement.text}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                )}
+              </Card>
+            </TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
     </div>
   );
 }

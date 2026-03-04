@@ -59,7 +59,7 @@ const LightsGenerator: React.FC = () => {
             top: index === 0 ? 0 : `${devidedTo() * index}%`,
             position: "absolute",
           }}
-          className="svg-light blur-[200px] absolute z-10"
+          className="svg-light blur-[200px] absolute z-50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >

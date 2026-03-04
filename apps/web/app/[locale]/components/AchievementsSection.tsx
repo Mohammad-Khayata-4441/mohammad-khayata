@@ -15,13 +15,13 @@ export const AchievementsSection = () => (
       <div className="overflow-hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto gap-4">
         {[
           {
-            icon: <BiDevices size={45} className="text-primary-foreground" />,
+            icon: <BiDevices size={45} className="text-primary" />,
             title: "Stunning & Responsive UI",
             description:
               "Delivering visually captivating, fully responsive web applications for seamless user experiences.",
           },
           {
-            icon: <MdSpeed size={45} className="text-primary-foreground" />,
+            icon: <MdSpeed size={45} className="text-primary" />,
             title: "Optimized Performance & SEO",
             description:
               "I build websites that load quickly, rank well on search engines, and provide a smooth user experience without slowdowns.",
@@ -30,7 +30,7 @@ export const AchievementsSection = () => (
             icon: (
               <MdOutlineAutoAwesomeMotion
                 size={45}
-                className="text-primary-foreground"
+                className="text-primary"
               />
             ),
             title: "Engaging Animations & Interactive UI",
@@ -38,7 +38,7 @@ export const AchievementsSection = () => (
               "I bring websites to life with smooth animations and interactive elements, making them more engaging and user-friendly.",
           },
           {
-            icon: <HiCode size={45} className="text-primary-foreground" />,
+            icon: <HiCode size={45} className="text-primary" />,
             title: "Scalable & Clean Code",
             description:
               "Building modular, maintainable architectures for long-term efficiency.",
@@ -47,7 +47,7 @@ export const AchievementsSection = () => (
           <Animator className="h-full" variant="scale-up" key={index}>
             <SpotlightCard className="glass-paper flex flex-col gap-4 h-full">
               {item.icon}
-              <h2 className="text-2xl font-bold text-primary-foreground">
+              <h2 className="text-2xl font-bold  ">
                 {item.title}
               </h2>
               <p>{item.description}</p>

@@ -87,7 +87,7 @@ export type Fields<T> = (string & keyof T)[];
 export interface QueryParams<T = Record<string, unknown>> {
     filters?: Filters<T>;
     sort?: SortParam<T>;
-    populate?: Populate<T>;
+    populate?: any;
     fields?: Fields<T>;
     pagination?: Pagination;
     /** Publication state: 'live' (default) | 'preview' */
@@ -352,6 +352,7 @@ export class StrapiService<TDefault = unknown> {
         const response = await fetch(url, {
             ...init,
             headers: this.buildHeaders(init.headers as HeadersInit),
+            cache:'no-store'
         });
 
         const durationMs = Date.now() - startTime;

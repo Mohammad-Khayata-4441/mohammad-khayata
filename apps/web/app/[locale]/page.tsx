@@ -7,6 +7,8 @@ import { WebDevSkillsSection } from "./components/WebDevSkillsSection";
 import { AchievementsSection } from "./components/AchievementsSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { generatePageMetadata } from "@/shared/lib/metaData";
+import { StrapiService } from "@/services/strapi";
+import { getHome } from "@/services/home";
 export const metadata = generatePageMetadata({
   title: "Home",
   description: `${resume.seo.description} View my portfolio showcasing ${resume.seo.projectsCompleted}+ projects including enterprise applications, e-commerce platforms, and ERP systems.`,
@@ -22,8 +24,12 @@ export const metadata = generatePageMetadata({
   ],
   type: "profile",
 });
-const Home = () => {
-  return (
+const  Home = async () => {
+  const homeData = await getHome();
+
+
+
+   return (
     <div className="page portfolio-page relative z-0 flex flex-col justify-center">
       <LightsGenerator />
       <div className="page-overlay"></div>
@@ -39,7 +45,7 @@ const Home = () => {
         </section>
         <WebDevSkillsSection />
         <AchievementsSection />
-        <ExperienceSection />
+        <ExperienceSection experiences={homeData?.data?.experiences} />
       </main>
     </div>
   );

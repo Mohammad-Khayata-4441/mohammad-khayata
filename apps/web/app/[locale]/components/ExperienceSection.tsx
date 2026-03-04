@@ -1,18 +1,23 @@
 
-import ExperienceTimeline from "@/shared/components/experience-timeline";
+import ExperienceCards from "@/shared/components/experience-cards";
 import SectionTitle from "@/shared/components/SectionTitle";
 import { Button } from "@/shared/components/ui/button";
 import { ArrowUp } from "lucide-react";
+import type { HomeData } from "@/services/home";
 
-export const ExperienceSection = () => (
+interface ExperienceSectionProps {
+  experiences?: HomeData['experiences'];
+}
+
+export const ExperienceSection = ({ experiences }: ExperienceSectionProps) => (
   <section className="min-h-screen bg-linear-to-b">
-    <div className="overflow-hidden max-w-(--breakpoint-xl) px-4 md:px-0 mx-auto">
+    <div className=" max-w-(--breakpoint-xl) px-4 md:px-0 mx-auto">
       <SectionTitle
         title="Professional Experience"
-        subtitle="A journey through my professional career, showcasing projects and achievements across different companies."
+        subtitle="My career journey through key roles and companies. Click on each position to learn more about my responsibilities and achievements."
       />
-      <div className="overflow-hidden mx-auto max-w-(--breakpoint-xl) px-4 md:px-0">
-        <ExperienceTimeline />
+      <div className=" mx-auto max-w-(--breakpoint-xl) px-4 md:px-0">
+        <ExperienceCards experiences={experiences} />
       </div>
     </div>
     <div className="flex justify-center">
