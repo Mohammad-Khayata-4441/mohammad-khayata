@@ -69,7 +69,7 @@ export const SlidingCapsuleNav = ({
   return (
     <nav
       className={cn(
-        'relative flex items-center gap-1 rounded-full border bg-background p-1 shadow-sm',
+        'relative flex items-center gap-1 p-1 shadow-sm',
         className,
       )}
       onMouseLeave={() => setHoveredTab(null)}
@@ -111,7 +111,7 @@ export const SlidingCapsuleNav = ({
                 layoutId={`${layoutId}-active`}
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                 className={cn(
-                  'absolute inset-0 z-10 rounded-full bg-primary shadow-md',
+                  'absolute inset-0 z-10 rounded-full shadow-md',
                   activeTabClassName,
                 )}
               />
@@ -123,7 +123,7 @@ export const SlidingCapsuleNav = ({
               <motion.div
                 layoutId={`${layoutId}-ghost`}
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                className='absolute inset-0 z-0 rounded-full bg-muted/80'
+                className='absolute inset-0 z-0 rounded-full bg-white/[0.06]'
               />
             )}
 

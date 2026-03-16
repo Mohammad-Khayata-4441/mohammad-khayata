@@ -93,10 +93,10 @@ export function BioShowcase() {
   return (
     <div className="space-y-8 container mx-auto px-4">
       <div className="text-center">
-        <h1 className="text-3xl md:text-4xl font-bold dark:text-white mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 headline-glow">
           Professional Overview
         </h1>
-        <p className="text-slate-100  mx-auto">
+        <p className="text-muted-soft mx-auto hero-subtitle text-base md:text-lg">
           Explore my professional journey, expertise, and vision through the
           sections below.
         </p>
@@ -109,30 +109,30 @@ export function BioShowcase() {
             <div
               ref={(el) => (sectionRefs.current[section.id] = el) as any}
               className={cn(
-                "transition-all duration-300",
+                "transition-all duration-300 interactive-card ",
                 activeSection === section.id
                   ? "ring-2 ring-primary ring-opacity-50 shadow-lg"
                   : ""
               )}
             >
-              <Card className="overflow-hidden glass-paper p-0">
+              <Card className="overflow-hidden  p-0 noise-overlay border-gradient">
                 <div
                   className="p-4 md:p-6 cursor-pointer flex justify-between items-center"
                   onClick={() => toggleSection(section.id)}
                 >
                   <div className="flex items-center">
-                    <div className="bg-primary/10 p-2 rounded-full mr-3 text-seconadry">
+                    <div className="bg-primary/10 p-2   mr-3 text-secondary ring-glow">
                       {section.icon}
                     </div>
-                    <h2 className="text-xl font-semibold text-slate-800 dark:text-white">
+                    <h2 className="text-xl font-semibold text-foreground">
                       {section.title}
                     </h2>
                   </div>
                   <Button variant="ghost" size="icon">
                     {expandedSections.has(section.id) ? (
-                      <ChevronUp className="h-5 w-5 text-seconadry" />
+                      <ChevronUp className="h-5 w-5 text-secondary" />
                     ) : (
-                      <ChevronDown className="h-5 w-5 text-seconadry" />
+                      <ChevronDown className="h-5 w-5 text-secondary" />
                     )}
                   </Button>
                 </div>
@@ -145,8 +145,8 @@ export function BioShowcase() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-4 pb-4 md:px-6 md:pb-6 border-t border-seconadry/50 pt-4">
-                        <div className="prose prose-slate max-w-none text-slate-100 text-lg">
+                      <div className="px-4 pb-4 md:px-6 md:pb-6 border-t border-secondary/40 pt-4">
+                        <div className="prose prose-slate max-w-none text-muted-soft text-lg leading-relaxed">
                           {formatContent(section.content)}
                         </div>
                       </div>

@@ -24,7 +24,7 @@ export const WebDevSkillsSection = () => {
   ];
 
   return (
-    <section>
+    <section className="px-4 md:px-0">
       <div className="overflow-hidden mx-auto grid grid-cols-1 max-w-(--breakpoint-xl) px-4 md:px-0">
         <SectionTitle
           title="Web Development Skills"
@@ -37,7 +37,7 @@ export const WebDevSkillsSection = () => {
                 <Animator variant="scale-down" key={index}>
                   <SpotlightCard
                     spotlightColor={skill.color as any}
-                    className="glass-paper rounded-xl flex justify-center items-center"
+                    className=" interactive-card rounded-2xl flex justify-center items-center"
                   >
                     <div className="relative aspect-square p-8">
                       <Image

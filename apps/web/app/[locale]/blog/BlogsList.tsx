@@ -48,11 +48,11 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
   }));
 
   return (
-    <div>
+    <div className="px-4 md:px-0">
       <div className="container max-w-(--breakpoint-xl) mx-auto">
-        <Tabs defaultValue="all" className="mb-8">
+        <Tabs defaultValue="all" className="mb-8 section-aurora p-6 md:p-8 noise-overlay">
           <div className="flex items-center justify-between my-4">
-            <h2 className="text-4xl font-bold tracking-tight text-primary-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground headline-glow">
               Latest Articles
             </h2>
             {/* <TabsList className="glass-paper">
@@ -68,7 +68,7 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
               {mappedBlogs.map((post, index) => (
                 <Card
                   key={index}
-                  className="overflow-hidden transition-all hover:shadow-md  glass-paper"
+                  className="overflow-hidden transition-all  interactive-card"
                 >
                   <div className="aspect-video overflow-hidden">
                     <img
@@ -84,13 +84,13 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
                           <Badge
                             key={t}
                             variant="outline"
-                            className="px-2 py-0.5 text-xs"
+                            className="px-2 py-0.5 text-xs tag-glass"
                           >
                             {t}
                           </Badge>
                         ))}
                       </div>
-                      <h3 className="line-clamp-2 text-xl font-bold dark:text-slate-100 ">
+                      <h3 className="line-clamp-2 text-xl font-bold text-foreground">
                         <a
                           className="hover:text-primary transition-all duration-300"
                           href={post.link}
@@ -114,7 +114,7 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
                           {post.author.substring(0, 2)}
                         </AvatarFallback>
                       </Avatar>
-                      <span className="text-xs">{post.author}</span>
+                      <span className="text-xs text-muted-soft">{post.author}</span>
                     </div>
                     <div className="flex items-center gap-3 text-xs text-muted-foreground">
                       <div className="flex items-center gap-1">

@@ -5,14 +5,16 @@ import { PortfolioData } from "./portfolio";
 /** Portfolio GET response data (from OpenAPI schema). */
 /** Single project from home.projects array. */
 export type HomeData = operations["home/get/home"]["responses"][200]["content"]["application/json"]["data"];
+export type AboutData = operations['about/get/about']['responses'][200]['content']['application/json']['data'];
 
 
-
-
+const baseStrapiService = new StrapiService(process.env.NEXT_PUBLIC_STRAPI_URL!);
 
 const homeService = new StrapiService<HomeData>(
     process.env.NEXT_PUBLIC_STRAPI_URL!, "/api/home"
 );
+
+
 
 /** Fetch the single portfolio resource. */
 export const getHome = () =>
@@ -23,6 +25,7 @@ export const getHome = () =>
                 populate: {
                     technologies: { populate: ["logo"] },
                     projects: { populate: "*" },
+                    achievements: { populate: "*" },
 
                 },
             },
@@ -30,3 +33,10 @@ export const getHome = () =>
             posts: { populate: "*" },
         }
     });
+
+
+export const getAbout = () =>
+    baseStrapiService.getSingleResource<AboutData>({
+        populate: "*",
+
+    }, "api/about");

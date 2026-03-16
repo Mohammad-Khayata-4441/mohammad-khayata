@@ -406,8 +406,9 @@ export class StrapiService<TDefault = unknown> {
 
     async getSingleResource<T = TDefault>(
         params: QueryParams<T> = {},
+        useEndpoint = this.endpoint,
     ): Promise<StrapiSingleResponse<T>> {
-        const url = this.buildUrl(this.endpoint, params as QueryParams);
+        const url = this.buildUrl(useEndpoint, params as QueryParams);
         return this.request<StrapiSingleResponse<T>>(url);
     }
 

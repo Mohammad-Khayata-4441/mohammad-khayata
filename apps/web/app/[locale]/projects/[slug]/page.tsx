@@ -1,6 +1,4 @@
 import { notFound } from "next/navigation";
-import { StrapiService } from "@/services/strapi";
-import type { operations } from "@repo/cms-types";
 
 interface ProjectPageProps {
   params: Promise<{ 
@@ -13,7 +11,7 @@ interface ProjectPageProps {
 // This is a placeholder page for project details
 // You can implement the full project details view here
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { locale, slug } = await params;
+  const { slug } = await params;
   
   try {
     // You can uncomment this when you want to fetch real data
@@ -28,9 +26,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     return (
       <div className="min-h-screen py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto section-aurora p-6 md:p-8 noise-overlay">
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold mb-4 gradient-heading">
+              <h1 className="text-4xl font-bold mb-4 text-gradient-cyan headline-glow">
                 Project Details  
               </h1>
               <p className="text-muted-foreground">
@@ -38,7 +36,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </p>
             </div>
             
-            <div className="glass-paper p-8 rounded-lg">
+            <div className=" p-8 rounded-3xl">
               <div className="text-center">
                 <h2 className="text-2xl font-semibold mb-4">
                   Coming Soon

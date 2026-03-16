@@ -2,13 +2,11 @@ import LightsGenerator from "@/app/components/LightsGenerator";
 import { BioShowcase } from "../components/Overview";
  import { resume } from "@/data/resume";
 import { HeroSection } from "./components/HeroSection";
-import { PersonalInfoSection } from "./components/PersonalInfoSection";
 import { WebDevSkillsSection } from "./components/WebDevSkillsSection";
 import { AchievementsSection } from "./components/AchievementsSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { generatePageMetadata } from "@/shared/lib/metaData";
-import { StrapiService } from "@/services/strapi";
-import { getHome } from "@/services/home";
+import { getAbout, getHome } from "@/services/home";
 export const metadata = generatePageMetadata({
   title: "Home",
   description: `${resume.seo.description} View my portfolio showcasing ${resume.seo.projectsCompleted}+ projects including enterprise applications, e-commerce platforms, and ERP systems.`,
@@ -24,20 +22,17 @@ export const metadata = generatePageMetadata({
   ],
   type: "profile",
 });
-const  Home = async () => {
+const Home = async () => {
   const homeData = await getHome();
+  const aboutData = await getAbout();
 
-
-
-   return (
+  return (
     <div className="page portfolio-page relative z-0 flex flex-col justify-center">
-      <LightsGenerator />
-      <div className="page-overlay"></div>
-      <main className="space-y-32">
-        <HeroSection />
-        <PersonalInfoSection />
-        <section>
-          <div className="overflow-hidden max-w-(--breakpoint-md) mx-auto">
+       <div className="page-overlay"></div>
+      <main className="space-y-24 md:space-y-32">
+        <HeroSection overview={aboutData.data.overview!} />
+        <section className="px-4 md:px-0">
+          <div className="overflow-hidden max-w-(--breakpoint-md) mx-auto section-aurora  interactive-card noise-overlay p-6 md:p-8">
             <div className="relative">
               <BioShowcase />
             </div>

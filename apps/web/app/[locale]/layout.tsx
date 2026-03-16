@@ -22,8 +22,7 @@ export default async function LocaleLayout({ children, params }: any) {
             <Navbar />
             {children}
           </Providers>
-          <LightsGenerator></LightsGenerator>
-        </NextIntlClientProvider>
+         </NextIntlClientProvider>
       </body>
     </html>
   );

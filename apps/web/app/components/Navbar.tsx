@@ -47,18 +47,18 @@ const MyComponent: React.FC = () => {
   const activeTab = navLinks.find(link => isActivePath(link.path))?.path || "/";
 
   return (
-    <header className="flex  fixed bottom-0 md:top-0 md:bottom-auto w-screen items-center justify-center  p-5 z-10">
-      <div className="content hidden md:block col-span-3"></div>
-
-      <div className="col-span-12 sm:col-span-8 flex justify-center w-full max-w-fit">
+    <header className="flex fixed bottom-0 md:top-0 md:bottom-auto w-screen items-center justify-center z-10">
+ 
+      <div className="col-span-12 sm:col-span-8 flex justify-center w-full py-4">
         <SlidingCapsuleNav
+        activeTabClassName="bg-primary text-primary-foreground "
           tabs={navLinks.map((item) => ({
             title: item.title,
             url: item.path,
             icon: <item.icon className="text-2xl md:text-xl select-none" />,
           }))}
           currentTab={activeTab}
-          className="rounded-2xl px-2 glass-paper py-2 md:py-2 md:px-8 backdrop-blur-xl border border-text hover:scale-[1.01] hover:border-secondary transition duration-3000 hover:shadow-2xl"
+          className="rounded-full px-2 bg-black/60 border border-white/[0.06] backdrop-blur-2xl py-2 md:py-2 md:px-8 hover:scale-[1.01] transition duration-300 hover:shadow-2xl"
           tabClassName="py-2 md:py-2 flex space-x-1 items-center select-none font-bold !bg-transparent"
         />
       </div>

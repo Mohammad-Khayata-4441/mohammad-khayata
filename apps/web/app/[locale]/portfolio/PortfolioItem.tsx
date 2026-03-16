@@ -1,15 +1,14 @@
 "use client";
-import ReadMore from "@/app/components/ReadMore";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Link } from "@/i18n";
-import { Button } from "@/shared/components/ui/button";
-import { MacbookMockUp } from "./MacbookMocUp";
 import { PhotoSlider } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { type Project } from "@/services/portfolio";
 import { strapiMedia } from "@/shared/utils/strapiMedia";
 import { ArrowUpRight, Github, ExternalLink, Images } from "lucide-react";
+import { motion } from "motion/react";
 
 const coverUrl = (item: Project) =>
   item.cover?.url ?? item.media?.[0]?.url ?? "";
@@ -18,10 +17,10 @@ const imageUrls = (item: Project): string[] =>
 
 export default function PortfolioItem({
   item,
-  className,
+  index,
 }: {
-  className?: string;
   item: Project;
+  index: number;
 }) {
   const [visible, setVisible] = useState(false);
   const cover = strapiMedia(coverUrl(item));
@@ -30,122 +29,113 @@ export default function PortfolioItem({
   const detailsHref = `/portfolio?project=${item.slug ?? item.id}`;
 
   return (
-    <div className={`grid grid-cols-12 project gap-2 xl:gap-4 ${className ?? ""}`}>
+    <motion.article
+      className="portfolio-card relative flex-shrink-0  aspect-video h-[70vh] rounded-2xl overflow-hidden group cursor-pointer select-none"
+      initial={{ opacity: 0, scale: 0.92 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      {/* Cover image */}
       {hasImages && (
-        <div className="image col-span-12 xl:col-span-5 file:cursor-pointer flex justify-center xl:justify-start">
-          <div className="hidden md:block w-full">
-            {/* <MacbookMockUp> */}
-              <div
-                className="relative   shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer h-full w-full overflow-hidden group"
-                onClick={() => setVisible(true)}
-              >
-                <Image
-                  height={1080}
-                  width={1920}
-                  className="work-cover h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  src={cover}
-                  alt={item.title ?? ""}
-                />
-              </div>
-            {/* </MacbookMockUp > */}
-          </div>
-          <div className="md:hidden w-full">
-            <Link
-              className="relative   h-full w-full block overflow-hidden shadow-md group"
-              href={`/portfolio?project=${item.slug ?? item.id}`}
-              scroll={false}
-            >
-              <Image
-                height={1080}
-                width={1920}
-                className="work-cover h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src={cover}
-                alt={item.title ?? ""}
-              />
-            </Link>
-          </div>
+        <div
+          className="absolute inset-0 z-0"
+          onClick={() => setVisible(true)}
+        >
+          <Image
+            fill
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            src={cover}
+            alt={item.title ?? ""}
+            sizes="(max-width: 768px) 85vw, (max-width: 1024px) 60vw, 50vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
         </div>
       )}
-      <div className="info col-span-12 xl:col-span-7 flex flex-col justify-start items-start px-4 gap-4">
-        <h2 className="text-3xl text-primary dark:text-white text-start xl:text-6xl font-bold">
-          {item.title}
-        </h2>
+
+      {/* Content overlay */}
+      <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-8 gap-3">
+        {/* Category / Company badge */}
         {item.company && (
-          <span className="text-sm font-semibold tracking-widest uppercase text-muted-foreground border-l-2 border-primary pl-3 py-0.5 hidden xl:block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-white/70 w-fit bg-primary/10 backdrop-blur-sm rounded-full px-4 py-2">
             {item.company}
           </span>
         )}
+
+        <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white leading-tight">
+          {item.title}
+        </h2>
+
         {item.overview && (
-          <ReadMore
-            className="dark:text-gray-400 text-start md:text-lg capitalize"
-            text={typeof item.overview === "string" ? item.overview : ""}
-          />
+          <p className="text-sm md:text-base text-white/70 line-clamp-2 max-w-lg">
+            {typeof item.overview === "string" ? item.overview : ""}
+          </p>
         )}
 
-        <div className="tecnologies flex items-center justify-start space-y-12">
-          <div className="flex gap-8 items-center">
-            {item.technologies?.map((t) =>
+        {/* Tech icons */}
+        {item.technologies && item.technologies.length > 0 && (
+          <div className="flex gap-3 items-center mt-1">
+            {item.technologies.map((t) =>
               t.logo?.url ? (
                 <Image
                   key={t.documentId ?? t.id}
                   alt={t.name ?? String(t.id)}
-                  className="tech-icon max-w-[40px] md:max-w-[65px]"
-                  width={100}
-                  height={100}
+                  className="rounded-md bg-white/10 backdrop-blur-sm p-1"
+                  width={32}
+                  height={32}
                   src={t.logo.url}
                 />
               ) : null
             )}
           </div>
-        </div>
-        <div className="flex justify-start flex-wrap gap-3 xl:gap-4 w-full mt-4">
+        )}
 
+        {/* Actions */}
+        <div className="flex items-center gap-3 mt-2 flex-wrap">
           {item.repo && (
-            <Button
-              asChild
-              size="lg"
-              variant="default"
-              className="grow xl:grow-0 min-w-[150px]"
+            <a
+              href={item.repo}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 transition-colors"
+              onClick={(e) => e.stopPropagation()}
             >
-              <a href={item.repo} target="_blank" rel="noreferrer" className="flex flex-row items-center justify-center gap-2">
-                <Github className="w-5 h-5" />
-                <span>Source Code</span>
-              </a>
-            </Button>
+              <Github className="w-4 h-4" />
+              Code
+            </a>
           )}
           {item.url && (
-            <Button
-              asChild
-              size="lg"
-               className="grow xl:grow-0 min-w-[150px]"
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 transition-colors"
+              onClick={(e) => e.stopPropagation()}
             >
-              <a href={item.url} target="_blank" rel="noreferrer" className="flex flex-row items-center justify-center gap-2">
-                <ExternalLink className="w-5 h-5" />
-                <span>Live Preview</span>
-              </a>
-            </Button>
+              <ExternalLink className="w-4 h-4" />
+              Live
+            </a>
           )}
-          {hasImages && (
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => setVisible(true)}
-              className="grow xl:grow-0 min-w-[150px] flex flex-row items-center justify-center gap-2"
+          {hasImages && images.length > 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setVisible(true);
+              }}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 transition-colors"
             >
-              <Images className="w-5 h-5" />
-              <span>Gallery ({images.length})</span>
-            </Button>
+              <Images className="w-4 h-4" />
+              {images.length}
+            </button>
           )}
-        </div>
-
-        <div className="mt-4 w-full">
           <Link
             href={detailsHref}
             scroll={false}
-            className="group flex justify-between items-center gap-2 font-medium hover:text-white hover:bg-black/20 dark:hover:bg-white/10 py-4 px-3   transition-all duration-300"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-white ml-auto group/link"
           >
-            View Details
-            <ArrowUpRight className="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            Details
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
           </Link>
         </div>
       </div>
@@ -155,6 +145,6 @@ export default function PortfolioItem({
         visible={visible}
         onClose={() => setVisible(false)}
       />
-    </div>
+    </motion.article>
   );
 }

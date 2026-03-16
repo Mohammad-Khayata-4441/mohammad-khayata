@@ -46,31 +46,30 @@ export default function page() {
   }
   return (
     <div className="page flex flex-col justify-center relative z-0 ">
-      <LightsGenerator></LightsGenerator>
-
+ 
       <div className="page-overlay"></div>
 
-      <div className="container mx-auto ">
-        <section className="lg:flex">
-          <div className="flex flex-col justify-center w-full p-8 lg:px-12 xl:px-32 lg:w-1/2">
-            <h1 className="text-3xl font-semibold text-gray-800 capitalize dark:text-white lg:text-4xl">
+      <div className="container mx-auto px-4 md:px-0">
+        <section className="lg:flex section-aurora noise-overlay p-3 md:p-6">
+          <div className="flex flex-col justify-center w-full p-8 lg:px-12 xl:px-20 lg:w-1/2  rounded-3xl">
+            <h1 className="text-3xl font-semibold text-foreground capitalize lg:text-4xl headline-glow">
               Contact Me
             </h1>
 
-            <p className="mt-4 text-gray-500 dark:dark:text-gray-300">
+            <p className="mt-4 text-muted-soft hero-subtitle text-base">
               I&apos;d love to connect and collaborate! Feel free to send me a
               message or reach out through my social media links below 🚀.
             </p>
 
             <div className="mt-6 md:mt-8">
-              <h3 className="font-medium text-gray-600 mt-4 text-xl dark:text-white ">
+              <h3 className="font-medium text-muted-soft mt-4 text-xl">
                 Contact info{" "}
               </h3>
-              <hr className="border-text" />
+              <hr className="faded-divider" />
 
               <ul>
                 <li className="my-4 ">
-                  <span className="dark:text-gray-300 dark:hover:text-primary text-md flex gap-2 items-center hover:text-primary transition-all  ">
+                  <span className="text-muted-soft hover:text-primary text-md flex gap-2 items-center transition-all">
                     {/* <icon name="fa:phone"></icon> */}
                     <CiPhone></CiPhone>
                     <a href="tel:+963956954441">
@@ -82,7 +81,7 @@ export default function page() {
                 <li className="my-4 ">
                   <a
                     href="mailto:MohammadKhayata.gm@gmail.com"
-                    className="dark:text-gray-300 dark:hover:text-primary text-md flex gap-2 items-center  transition-all  "
+                    className="text-muted-soft hover:text-primary text-md flex gap-2 items-center transition-all"
                   >
                     {/* <icon name="fa:at"></icon> */}
                     <CiAt></CiAt>
@@ -91,20 +90,20 @@ export default function page() {
                 </li>
               </ul>
 
-              <h3 className="font-medium text-gray-600 mt-8 text-xl dark:text-white ">
+              <h3 className="font-medium text-muted-soft mt-8 text-xl">
                 Social Media{" "}
               </h3>
-              <hr className="border-text" />
+              <hr className="faded-divider" />
               <div className="flex mt-4 -mx-1.5 ">
                 <a
-                  className="mx-1.5 dark:hover:text-primary dark:text-gray-300 transition-colors duration-300 transform hover:primary"
+                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
                   href="https://www.linkedin.com/in/mohammad-khayata-9169801a9"
                 >
                   {/* <icon className="text-2xl mt-1" name="ri:linkedin-fill" /> */}
                   <BsLinkedin />
                 </a>
                 <a
-                  className="mx-1.5 dark:hover:text-primary dark:text-gray-300 transition-colors duration-300 transform hover:primary"
+                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
                   href="https://github.com/Mohammad-Khayata-4441"
                 >
                   {/* <icon className="text-2xl mt-1" name="ri:github-fill" /> */}
@@ -112,7 +111,7 @@ export default function page() {
                 </a>
 
                 <a
-                  className="mx-1.5 dark:hover:text-primary dark:text-gray-300 transition-colors duration-300 transform hover:primary"
+                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
                   href="https://t.me/Mohammadkh4441"
                 >
                   {/* <icon className="text-2xl mt-1" name="fa-brands:telegram-plane" /> */}
@@ -120,7 +119,7 @@ export default function page() {
                 </a>
 
                 <a
-                  className="mx-1.5 dark:hover:text-primary dark:text-gray-300 transition-colors duration-300 transform hover:primary"
+                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
                   href="https://www.facebook.com/mohammed.kh.165033/"
                 >
                   {/* <icon className="text-2xl mt-1" name="fa-brands:facebook-f" /> */}
@@ -128,14 +127,14 @@ export default function page() {
                 </a>
 
                 <a
-                  className="mx-1.5 dark:hover:text-primary dark:text-gray-300 transition-colors duration-300 transform hover:primary"
+                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
                   href="https://www.instagram.com/mohammad_khayat4441/"
                 >
                   {/* <icon className="text-2xl mt-1" name="mdi:instagram" /> */}
                   <BsInstagram></BsInstagram>
                 </a>
                 <a
-                  className="mx-1.5 dark:hover:text-primary dark:text-gray-300 transition-colors duration-300 transform hover:primary"
+                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
                   href="https://wa.me/+963956954441"
                 >
                   <BsWhatsapp></BsWhatsapp>
@@ -144,11 +143,11 @@ export default function page() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center w-full p-8 pt-0 lg:w-1/2 lg:px-12 xl:px-24 ">
+          <div className="flex flex-col justify-center w-full p-8 pt-4 lg:w-1/2 lg:px-12 xl:px-24  rounded-3xl">
             <form action={"https://api.web3forms.com/submit"} method="POST">
               <div className="-mx-2 md:items-center md:flex">
                 <div className="flex-1 px-2">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label className="block mb-2 text-sm text-muted-soft">
                     Full Name
                   </label>
                   <input
@@ -156,12 +155,12 @@ export default function page() {
                     id="name"
                     type="text"
                     placeholder="John Doe"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-hidden focus:ring-3 focus:ring-opacity-40 transition-all duration-700"
+                    className="input-glass mt-2"
                   />
                 </div>
 
                 <div className="flex-1 px-2 mt-4 md:mt-0">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label className="block mb-2 text-sm text-muted-soft">
                     Email address
                   </label>
                   <input
@@ -169,20 +168,19 @@ export default function page() {
                     name="email"
                     type="email"
                     placeholder="johndoe@example.com"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-hidden focus:ring-3 focus:ring-opacity-40 transition-all duration-700"
+                    className="input-glass mt-2"
                   />
                 </div>
               </div>
 
               <div className="w-full mt-4">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-sm text-muted-soft">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  className="
-                                block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-dark-overlay/10 backdrop-blur-2xl dark:bg-opacity-60 dark:dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-hidden focus:ring-3 focus:ring-opacity-40 transition-all duration-700"
+                  className="input-glass mt-2 h-32 md:h-56"
                   placeholder="Message"
                 ></textarea>
               </div>
@@ -197,7 +195,7 @@ export default function page() {
                 value={process.env.WEB3_FORM_KEY}
               />
 
-              <Button type="submit" className="mt-4 hover:bg-seconadry/80">
+              <Button type="submit" className="mt-4 button-glow">
                 <AiOutlineMessage></AiOutlineMessage>
                 Send Message
               </Button>

@@ -50,7 +50,6 @@ export default function ExperienceCards({ experiences = [] }: ExperienceCardsPro
     });
   };
 
-  console.log("Rendering ExperienceCards with experiences:", JSON.stringify(experiences, null, 2));
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {experiences.map((experience, index) => (
@@ -60,12 +59,12 @@ export default function ExperienceCards({ experiences = [] }: ExperienceCardsPro
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: index * 0.1 }}
         >
-            <Card className="glass-paper overflow-hidden hover:shadow-xl transition-all duration-300">
+            <Card className=" interactive-card overflow-hidden transition-all duration-300 noise-overlay">
               {/* Main Header */}
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/20">
+                    <div className="p-3 rounded-lg bg-linear-to-br from-primary/20 to-secondary/20 border border-primary/20 ring-glow">
                       <Briefcase className="h-6 w-6 text-primary" />
                     </div>
                     
@@ -76,7 +75,9 @@ export default function ExperienceCards({ experiences = [] }: ExperienceCardsPro
                       <CardDescription className="text-lg font-medium text-primary mb-2">
                         {experience.company}
                       </CardDescription>
-                      
+
+
+                   
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
@@ -94,19 +95,28 @@ export default function ExperienceCards({ experiences = [] }: ExperienceCardsPro
                             )}
                           </div>
                         )}
+
+                        
                       </div>
+
                     </div>
+
                   </div>
                   
                   <Link 
                     href={`/experience/${experience.documentId}`}
-                    className="p-2 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors group/link"
+                    className="p-2 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors group/link border border-line-soft/70"
                     title="View Details"
                   >
                     <ArrowUpRight className="h-4 w-4 text-secondary group-hover/link:text-primary transition-colors" />
                   </Link>
                 </div>
+                   <CardDescription className="flex items-center gap-4 text-lg mt-8 text-foreground">
+                            {experience.overview}
+                        </CardDescription>
+                      
               </CardHeader>
+              
 
               {/* Projects Section */}
               {experience.projects && experience.projects.length > 0 && (
@@ -124,7 +134,7 @@ export default function ExperienceCards({ experiences = [] }: ExperienceCardsPro
                           {experience.projects.map((project, projectIndex) => (
                             <div 
                               key={project.documentId || projectIndex}
-                              className="p-3 rounded-lg bg-gradient-to-r from-accent/5 to-transparent border border-accent/20 hover:from-accent/10 transition-all duration-200 group"
+                              className="p-3 rounded-lg bg-linear-to-r from-accent/8 to-transparent border border-accent/20 hover:from-accent/15 transition-all duration-200 group"
                             >
                               <div className="flex items-center justify-between mb-2">
                                 <h5 className="font-medium text-sm text-foreground group-hover:text-primary transition-colors">
@@ -231,7 +241,7 @@ export default function ExperienceCards({ experiences = [] }: ExperienceCardsPro
                               className="w-12 h-12 object-contain"
                             />
                           ) : (
-                            <div className="w-8 h-8 rounded bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                            <div className="w-8 h-8 rounded bg-linear-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                               <span className="text-xs font-bold text-primary">
                                 {tech.name?.substring(0, 2).toUpperCase()}
                               </span>

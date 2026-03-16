@@ -10,11 +10,10 @@ export default async function BlogPage() {
   const posts: DevToPost[] = await data.json();
 
   return (
-    <div className="min-h-screen  page relative z-0">
-      <LightsGenerator />
-      <div className="page-overlay"></div>
+    <div className="min-h-screen page relative z-0">
+       <div className="page-overlay"></div>
 
-      <main className="container py-8">
+      <main className="container py-8 md:py-10">
         <section>
           <BlogsList posts={posts}></BlogsList>
         </section>

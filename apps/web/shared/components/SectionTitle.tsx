@@ -7,10 +7,10 @@ export default function SectionTitle(props: {
 }) {
   return (
     <Animator className="flex justify-center flex-col items-center">
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-800 dark:text-slate-100 capitalize">
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground capitalize headline-glow">
         {props.title}
       </h1>
-      <p className="text-lg max-w-(--breakpoint-lg) capitalize text-center text-slate-600 dark:text-slate-300 mb-12 lg:mb-24">
+      <p className="text-lg max-w-(--breakpoint-lg) capitalize text-center text-muted-soft mb-12 lg:mb-24 hero-subtitle">
         {props.subtitle}
       </p>
     </Animator>

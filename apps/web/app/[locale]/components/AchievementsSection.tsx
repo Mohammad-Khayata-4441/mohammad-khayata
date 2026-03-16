@@ -6,7 +6,7 @@ import { HiCode } from "react-icons/hi";
 import { MdSpeed, MdOutlineAutoAwesomeMotion } from "react-icons/md";
 
 export const AchievementsSection = () => (
-  <section>
+  <section className="px-4 md:px-0">
     <div className="container max-w-(--breakpoint-xl) px-4 md:px-0 mx-auto">
       <SectionTitle
         title="What will we achieve together?"
@@ -45,12 +45,12 @@ export const AchievementsSection = () => (
           },
         ].map((item, index) => (
           <Animator className="h-full" variant="scale-up" key={index}>
-            <SpotlightCard className="glass-paper flex flex-col gap-4 h-full">
+            <SpotlightCard className=" interactive-card noise-overlay flex flex-col gap-4 h-full">
               {item.icon}
-              <h2 className="text-2xl font-bold  ">
+              <h2 className="text-2xl font-bold text-foreground">
                 {item.title}
               </h2>
-              <p>{item.description}</p>
+              <p className="text-muted-soft">{item.description}</p>
             </SpotlightCard>
           </Animator>
         ))}
