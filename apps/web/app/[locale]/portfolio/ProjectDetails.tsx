@@ -1,10 +1,9 @@
 "use client";
 import "swiper/css";
 import React from "react";
-import { PortfolioItem } from "@/types/PortfolioItem";
-import { useRouter } from "@/i18n";
-export default function ProjectDetails(props: { project?: PortfolioItem }) {
-  const router = useRouter();
+import { type Project } from "@/services/portfolio";
+
+export default function ProjectDetails(props: { project?: Project }) {
   return (
     <></>
 
