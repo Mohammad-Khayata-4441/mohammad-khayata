@@ -41,7 +41,7 @@ const infoItems = [
 ];
 
 export const HeroSection = (props: { overview: string }) => (
-  <section className="overflow-hidden min-h-screen  relative" id="hero">
+  <section className="overflow-hidden min-h-screen flex flex-col justify-center relative" id="hero">
     {/* Aceternity-style SVG Spotlight */}
     <Spotlight
       className="-top-40 left-0 md:-top-20 md:left-60"
