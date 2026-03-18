@@ -140,7 +140,7 @@ export const HeroSection = (props: { overview: string }) => (
     </div>
 
     {/* ── Info Glass Banner ── */}
-    <div className=" left-0 right-0 z-2 relative bottom-12 ">
+    <div className=" left-0 right-0 z-2 relative xl:bottom-12 mt-8 lg:mt-0 ">
       <div className="container mx-auto max-w-(--breakpoint-xl) px-4">
         <Animator>
           <div className="rounded-2xl bg-white/4 border border-white/10 backdrop-blur-2xl overflow-hidden">

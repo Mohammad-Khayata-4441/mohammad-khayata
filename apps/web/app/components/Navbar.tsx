@@ -47,7 +47,7 @@ const MyComponent: React.FC = () => {
   const activeTab = navLinks.find(link => isActivePath(link.path))?.path || "/";
 
   return (
-    <header className="flex fixed bottom-0 md:top-0 md:bottom-auto w-screen items-center justify-center z-10">
+    <header className="flex fixed bottom-0 md:top-0 md:bottom-auto w-screen items-center justify-center z-50">
  
       <div className="col-span-12 sm:col-span-8 flex justify-center w-full py-4">
         <SlidingCapsuleNav
