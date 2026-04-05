@@ -11,7 +11,7 @@ const nextConfig = withNextIntl({
       },
       {
         protocol: NEXT_PUBLIC_STRAPI_URL?.startsWith("https") ? "https" : "http",
-        hostname: NEXT_PUBLIC_STRAPI_URL?.split("//")[1],
+        hostname: NEXT_PUBLIC_STRAPI_URL?.split("//")[1]?.replace(/\/+$/, ""),
       }
     ],
   },
