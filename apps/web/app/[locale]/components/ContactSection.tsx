@@ -13,7 +13,7 @@ import { Card, CardContent, CardHeader } from "@/shared/components/ui/card";
 
 export const ContactSection = () => {
   return (
-    <div className="container mx-auto px-4 md:px-0">
+    <div className="container mx-auto px-4 md:px-0" id="contact">
       <section className="lg:flex section-aurora noise-overlay p-4 md:p-8 lg:p-10 ">
         <div className="flex flex-col justify-center w-full p-6 lg:p-8 lg:w-5/12 xl:w-2/5 rounded-3xl">
           <h2 className="text-4xl font-bold text-foreground capitalize lg:text-5xl headline-glow tracking-tight">

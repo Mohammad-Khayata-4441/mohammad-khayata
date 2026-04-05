@@ -64,7 +64,7 @@ export default function ExperienceCards({ experiences = [] }: ExperienceCardsPro
             {/* Main Header */}
             <CardHeader className="pb-4">
               <div className="flex items-start justify-between">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col lg:flex-row items-start gap-4">
                   <div className="p-3 rounded-lg bg-linear-to-br from-primary/20 to-secondary/20 border border-primary/20 ring-glow">
                     <Briefcase className="h-6 w-6 text-primary" />
                   </div>
