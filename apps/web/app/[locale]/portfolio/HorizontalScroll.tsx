@@ -36,7 +36,7 @@ export default function HorizontalScroll({
       {/* ── Projects Grid ── */}
       <div className="relative z-10 px-4 pb-20">
         <div className="container mx-auto max-w-(--breakpoint-xl)">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+          <div className="flex flex-col gap-8 sm:gap-12 md:gap-16">
             {projects.map((item, i) => (
               <PortfolioItem
                 key={item.documentId ?? item.id}

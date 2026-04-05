@@ -58,7 +58,7 @@ export const HeroSection = (props: { overview: string }) => (
     <div className="hero container mx-auto px-4 max-w-(--breakpoint-xl) grid grid-cols-12 gap-8 lg:gap-12 items-center relative z-1">
       {/* Left — Text & Info */}
       <div className="col-span-12 order-2 lg:order-1 lg:col-span-7 flex flex-col justify-center items-center lg:items-start space-y-6">
-     
+
 
         <Animator>
           <div className="text-center lg:text-left">
@@ -84,7 +84,7 @@ export const HeroSection = (props: { overview: string }) => (
 
         <Animator>
           <p className="text-base sm:text-lg text-foreground/50 max-w-lg text-center lg:text-left leading-relaxed">
-              {props.overview}
+            {props.overview}
           </p>
         </Animator>
 
@@ -156,7 +156,7 @@ export const HeroSection = (props: { overview: string }) => (
                   {/* left orange accent bar */}
                   <span className="absolute left-0 top-5 bottom-5 w-0.5 bg-primary/70 rounded-full" />
                   <div className="flex items-center gap-2 pl-1">
-                    <item.icon className="w-3.5 h-3.5 text-primary/80 shrink-0" />
+                    <item.icon className="w-3.5 h-3.5 text-primary/80 " />
                     <span className="text-[11px] uppercase tracking-wider text-white/40">
                       {item.label}
                     </span>
@@ -180,5 +180,6 @@ export const HeroSection = (props: { overview: string }) => (
         </Animator>
       </div>
     </div>
+
   </section>
 );

@@ -10,9 +10,6 @@ const nextConfig = withNextIntl({
         hostname: "localhost",
       },
       {
-        protocol: "https",
-        hostname: "ruhmvzueumswzfdbjlto.supabase.co",
-      }, {
         protocol: NEXT_PUBLIC_STRAPI_URL?.startsWith("https") ? "https" : "http",
         hostname: NEXT_PUBLIC_STRAPI_URL?.split("//")[1],
       }

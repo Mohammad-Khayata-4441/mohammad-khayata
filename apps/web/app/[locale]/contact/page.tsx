@@ -1,6 +1,7 @@
 import LightsGenerator from "@/app/components/LightsGenerator";
-import { Button } from "@/shared/components/ui/button";
-import { AiOutlineMessage } from "react-icons/ai";
+import { CiAt, CiPhone } from "react-icons/ci";
+import { resume } from "@/data/resume";
+import { generatePageMetadata } from "@/shared/lib/metaData";
 import {
   BsFacebook,
   BsGithub,
@@ -9,9 +10,8 @@ import {
   BsTelegram,
   BsWhatsapp,
 } from "react-icons/bs";
-import { CiAt, CiPhone } from "react-icons/ci";
- import { resume } from "@/data/resume";
-import { generatePageMetadata } from "@/shared/lib/metaData";
+import ContactForm from "./ContactForm";
+import { Card, CardContent, CardHeader } from "@/shared/components/ui/card";
 
 export const metadata = generatePageMetadata({
   title: "Contact",
@@ -31,175 +31,116 @@ export const metadata = generatePageMetadata({
 });
 
 export default function page() {
-  async function handleSubmit(formData: FormData) {
-    "use server";
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
 
-    await fetch(
-      `https://api.web3forms.com/submit?access_key=${process.env.WEB3FORMS_ACCESS_KEY}&to=${process.env.NEXT_PUBLIC_EMAIL}&subject=Contact Form Submission - ${name}&message=${message}&replyTo=${email}`
-    );
-    // const formData = new FormData(event.target);
-    // const response = await sendEmail(formData);
-    // setStatus(response.message);
-  }
   return (
-    <div className="page flex flex-col justify-center relative z-0 ">
- 
+    <div className="min-h-screen flex flex-col items-center justify-center relative z-0 py-12 md:py-24">
       <div className="page-overlay"></div>
 
       <div className="container mx-auto px-4 md:px-0">
-        <section className="lg:flex section-aurora noise-overlay p-3 md:p-6">
-          <div className="flex flex-col justify-center w-full p-8 lg:px-12 xl:px-20 lg:w-1/2  rounded-3xl">
-            <h1 className="text-3xl font-semibold text-foreground capitalize lg:text-4xl headline-glow">
-              Contact Me
+        <section className="lg:flex section-aurora noise-overlay p-4 md:p-8 lg:p-10 ">
+          <div className="flex flex-col justify-center w-full p-6 lg:p-8 lg:w-5/12 xl:w-2/5 rounded-3xl">
+            <h1 className="text-4xl font-bold text-foreground capitalize lg:text-5xl headline-glow tracking-tight">
+              Let&apos;s Talk
             </h1>
 
-            <p className="mt-4 text-muted-soft hero-subtitle text-base">
-              I&apos;d love to connect and collaborate! Feel free to send me a
-              message or reach out through my social media links below 🚀.
+            <p className="mt-6 text-muted-soft hero-subtitle text-lg leading-relaxed">
+              I&apos;m always open to discussing product design work or partnership opportunities. Let&apos;s build something great together.
             </p>
 
-            <div className="mt-6 md:mt-8">
-              <h3 className="font-medium text-muted-soft mt-4 text-xl">
-                Contact info{" "}
+            <div className="mt-8 md:mt-12 bg-background/30 p-6 rounded-2xl   border-white/5 backdrop-blur-sm">
+              <h3 className="font-semibold text-foreground tracking-wide uppercase text-sm mb-4">
+                Get in touch
               </h3>
-              <hr className="faded-divider" />
 
-              <ul>
-                <li className="my-4 ">
-                  <span className="text-muted-soft hover:text-primary text-md flex gap-2 items-center transition-all">
-                    {/* <icon name="fa:phone"></icon> */}
-                    <CiPhone></CiPhone>
-                    <a href="tel:+963956954441">
-                      +963&nbsp;956&nbsp;954&nbsp;441
-                    </a>
-                  </span>
+              <ul className="space-y-5">
+                <li>
+                  <a href="tel:+963956954441" className="group flex items-center gap-4 text-muted-soft hover:text-primary transition-all duration-300">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <CiPhone className="text-2xl text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-foreground/50 uppercase tracking-wider mb-1">Phone</p>
+                      <span className="font-medium">+963 956 954 441</span>
+                    </div>
+                  </a>
                 </li>
 
-                <li className="my-4 ">
-                  <a
-                    href="mailto:MohammadKhayata.gm@gmail.com"
-                    className="text-muted-soft hover:text-primary text-md flex gap-2 items-center transition-all"
-                  >
-                    {/* <icon name="fa:at"></icon> */}
-                    <CiAt></CiAt>
-                    <span>MohammadKhayata.gm@gmail.com</span>
+                <li>
+                  <a href="mailto:MohammadKhayata.gm@gmail.com" className="group flex items-center gap-4 text-muted-soft hover:text-primary transition-all duration-300">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <CiAt className="text-2xl text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-foreground/50 uppercase tracking-wider mb-1">Email</p>
+                      <span className="font-medium">MohammadKhayata.gm@gmail.com</span>
+                    </div>
                   </a>
                 </li>
               </ul>
 
-              <h3 className="font-medium text-muted-soft mt-8 text-xl">
-                Social Media{" "}
+              <hr className="faded-divider my-8" />
+
+              <h3 className="font-semibold text-foreground tracking-wide uppercase text-sm mb-4">
+                Social Profiles
               </h3>
-              <hr className="faded-divider" />
-              <div className="flex mt-4 -mx-1.5 ">
+              <div className="flex gap-3 flex-wrap">
                 <a
-                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-background border border-white/5 text-muted-soft hover:text-primary hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300 shadow-sm"
                   href="https://www.linkedin.com/in/mohammad-khayata-9169801a9"
+                  target="_blank" rel="noreferrer"
                 >
-                  {/* <icon className="text-2xl mt-1" name="ri:linkedin-fill" /> */}
                   <BsLinkedin />
                 </a>
                 <a
-                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-background border border-white/5 text-muted-soft hover:text-primary hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300 shadow-sm"
                   href="https://github.com/Mohammad-Khayata-4441"
+                  target="_blank" rel="noreferrer"
                 >
-                  {/* <icon className="text-2xl mt-1" name="ri:github-fill" /> */}
-                  <BsGithub></BsGithub>
+                  <BsGithub />
                 </a>
-
                 <a
-                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-background border border-white/5 text-muted-soft hover:text-primary hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300 shadow-sm"
                   href="https://t.me/Mohammadkh4441"
+                  target="_blank" rel="noreferrer"
                 >
-                  {/* <icon className="text-2xl mt-1" name="fa-brands:telegram-plane" /> */}
-                  <BsTelegram></BsTelegram>
+                  <BsTelegram className="text-lg" />
                 </a>
-
                 <a
-                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-background border border-white/5 text-muted-soft hover:text-primary hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300 shadow-sm"
                   href="https://www.facebook.com/mohammed.kh.165033/"
+                  target="_blank" rel="noreferrer"
                 >
-                  {/* <icon className="text-2xl mt-1" name="fa-brands:facebook-f" /> */}
                   <BsFacebook />
                 </a>
-
                 <a
-                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-background border border-white/5 text-muted-soft hover:text-primary hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300 shadow-sm"
                   href="https://www.instagram.com/mohammad_khayat4441/"
+                  target="_blank" rel="noreferrer"
                 >
-                  {/* <icon className="text-2xl mt-1" name="mdi:instagram" /> */}
-                  <BsInstagram></BsInstagram>
+                  <BsInstagram className="text-lg" />
                 </a>
                 <a
-                  className="mx-1.5 icon-tile text-muted-soft hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-background border border-white/5 text-muted-soft hover:text-primary hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300 shadow-sm"
                   href="https://wa.me/+963956954441"
+                  target="_blank" rel="noreferrer"
                 >
-                  <BsWhatsapp></BsWhatsapp>
+                  <BsWhatsapp className="text-lg" />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col justify-center w-full p-8 pt-4 lg:w-1/2 lg:px-12 xl:px-24  rounded-3xl">
-            <form action={"https://api.web3forms.com/submit"} method="POST">
-              <div className="-mx-2 md:items-center md:flex">
-                <div className="flex-1 px-2">
-                  <label className="block mb-2 text-sm text-muted-soft">
-                    Full Name
-                  </label>
-                  <input
-                    name="name"
-                    id="name"
-                    type="text"
-                    placeholder="John Doe"
-                    className="input-glass mt-2"
-                  />
-                </div>
+          <div className="flex flex-col justify-center w-full p-6 lg:p-12 lg:w-7/12 xl:w-3/5 rounded-3xl mt-8 lg:mt-0 relative">
+            <Card className="relative z-10">
+              <CardHeader>
+                <h2 className="text-2xl font-semibold text-foreground tracking-tight">Send a Message</h2>
 
-                <div className="flex-1 px-2 mt-4 md:mt-0">
-                  <label className="block mb-2 text-sm text-muted-soft">
-                    Email address
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="johndoe@example.com"
-                    className="input-glass mt-2"
-                  />
-                </div>
-              </div>
-
-              <div className="w-full mt-4">
-                <label className="block mb-2 text-sm text-muted-soft">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="input-glass mt-2 h-32 md:h-56"
-                  placeholder="Message"
-                ></textarea>
-              </div>
-              <input
-                type="hidden"
-                name="redirect"
-                value="https://web3forms.com/success"
-              />
-              <input
-                type="hidden"
-                name="access_key"
-                value={process.env.WEB3_FORM_KEY}
-              />
-
-              <Button type="submit" className="mt-4 button-glow">
-                <AiOutlineMessage></AiOutlineMessage>
-                Send Message
-              </Button>
-            </form>
+              </CardHeader>
+              <CardContent className="mb-8 hidden lg:block">
+                <p className="text-muted-soft mt-2">Fill out the form below and I'll get back to you within 24 hours.</p>
+                <ContactForm />
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>
