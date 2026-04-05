@@ -2,8 +2,9 @@ import { MetadataRoute } from "next";
 import { projectsService } from "@/services/projects";
 import type { DevToPost } from "@/app/[locale]/blog/types";
 
-const BASE_URL =
-  process.env.NEXT_BASE_URL || "https://mohammad-khayata.vercel.app";
+const BASE_URL = (
+  process.env.NEXT_BASE_URL || "https://mohammad-khayata.sy"
+).replace(/[;/]+$/, "");
 
 const LOCALES = ["en", "ar"] as const;
 

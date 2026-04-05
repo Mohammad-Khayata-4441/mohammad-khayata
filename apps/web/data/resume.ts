@@ -4,7 +4,7 @@ export const resume = {
         "phone": "+963 956954441",
         "email": "mohammadkhayata.gm@gmail.com",
         "location": "Syria",
-        "website": "https://mohammad-khayata.vercel.app",
+        "website": "https://mohammad-khayata.sy",
         "linkedin": "https://linkedin.com/in/mohammad-khayata",
         "github": "https://github.com/mohammad-khayata"
     },

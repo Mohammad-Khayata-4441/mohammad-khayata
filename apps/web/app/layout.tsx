@@ -9,8 +9,9 @@ import {
 import { getAbout } from "@/services/home";
 import { cache } from "react";
 
-const BASE_URL =
-  process.env.NEXT_BASE_URL || "https://mohammad-khayata.vercel.app";
+const BASE_URL = (
+  process.env.NEXT_BASE_URL || "https://mohammad-khayata.sy"
+).replace(/[;/]+$/, "");
 
 // Deduplicate across generateMetadata + RootLayout within the same render
 const getCachedAbout = cache(getAbout);

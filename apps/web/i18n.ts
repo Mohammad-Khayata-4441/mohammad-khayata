@@ -10,9 +10,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
     return {
         locale: validLocale,
         messages: (await import(`./translations/${validLocale}.json`)).default,
+
     }
 })
 export const locales = ['ar', 'en'] as const
 export const defaultLocale = 'en';
 export const { Link, redirect, usePathname, useRouter, } =
-    createNavigation({ locales });
+    createNavigation({ locales , localePrefix:'as-needed'});

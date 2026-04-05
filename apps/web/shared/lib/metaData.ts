@@ -38,7 +38,7 @@ interface SocialLinkComponent {
     type?: string;
 }
 
-const BASE_URL = process.env.NEXT_BASE_URL || 'https://mohammad-khayata.vercel.app';
+const BASE_URL = (process.env.NEXT_BASE_URL || 'https://mohammad-khayata.sy').replace(/[;/]+$/, '');
 const DEFAULT_TITLE = resume.seo.title;
 const DEFAULT_DESCRIPTION = resume.seo.description;
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
