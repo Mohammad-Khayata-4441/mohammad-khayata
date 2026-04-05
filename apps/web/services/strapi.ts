@@ -398,8 +398,9 @@ export class StrapiService<TDefault = unknown> {
      */
     async getCollection<T = TDefault>(
         params: QueryParams<T> = {},
+        endpoint = this.endpoint,
     ): Promise<StrapiCollectionResponse<T>> {
-        const url = this.buildUrl(this.endpoint, params as QueryParams);
+        const url = this.buildUrl(endpoint, params as QueryParams);
         return this.request<StrapiCollectionResponse<T>>(url);
     }
 

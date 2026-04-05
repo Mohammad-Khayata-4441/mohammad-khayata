@@ -9,6 +9,34 @@ export interface PageMetadataOptions {
 }
 import type { Metadata } from 'next';
 import { resume } from '@/data/resume';
+import type { AboutData } from '@/services/home';
+
+// ── Lightweight wrappers for CMS component shapes ─────────────────────────────
+
+interface SeoComponent {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string;
+    metaRobots?: string;
+    canonicalURL?: string;
+    structuredData?: unknown;
+    metaImage?: { url?: string };
+    openGraph?: OpenGraphComponent;
+}
+
+interface OpenGraphComponent {
+    ogTitle?: string;
+    ogDescription?: string;
+    ogUrl?: string;
+    ogType?: string;
+    ogImage?: { url?: string };
+}
+
+interface SocialLinkComponent {
+    title?: string;
+    url?: string;
+    type?: string;
+}
 
 const BASE_URL = process.env.NEXT_BASE_URL || 'https://mohammad-khayata.vercel.app';
 const DEFAULT_TITLE = resume.seo.title;
@@ -142,4 +170,126 @@ export function generateStructuredData(type: 'person' | 'website' | 'portfolio' 
     }
 
     return baseStructuredData;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Backend-driven metadata — built from the About CMS entry
+// ─────────────────────────────────────────────────────────────────────────────
+
+function strapiUrl(path?: string): string | undefined {
+    if (!path) return undefined;
+    const base = (process.env.NEXT_PUBLIC_STRAPI_URL ?? '').replace(/\/$/, '');
+    return path.startsWith('http') ? path : `${base}${path}`;
+}
+
+export function generateMetadataFromAbout(about: AboutData): Metadata {
+    const seo = about?.seo as SeoComponent | undefined;
+    const ogCms = (seo?.openGraph ?? about?.openGraph) as OpenGraphComponent | undefined;
+    const socialLinks = (about?.socialLinks ?? []) as SocialLinkComponent[];
+
+    const siteName = about?.fullName ?? resume.contact.name;
+    const title = seo?.metaTitle ?? DEFAULT_TITLE;
+    const description = seo?.metaDescription ?? DEFAULT_DESCRIPTION;
+
+    const keywords = seo?.keywords
+        ? seo.keywords.split(',').map((k) => k.trim()).filter(Boolean)
+        : DEFAULT_KEYWORDS;
+
+    const canonicalUrl = seo?.canonicalURL ?? BASE_URL;
+
+    // Resolve images (Strapi relative paths → absolute URLs, fall back to static asset)
+    const metaImageUrl = strapiUrl(seo?.metaImage?.url) ?? DEFAULT_IMAGE;
+    const ogImageUrl = strapiUrl(ogCms?.ogImage?.url) ?? metaImageUrl;
+
+    const ogTitle = ogCms?.ogTitle ?? title;
+    const ogDescription = ogCms?.ogDescription ?? description;
+    const ogUrl = ogCms?.ogUrl ?? canonicalUrl;
+    const ogType = (ogCms?.ogType ?? 'website') as 'website' | 'article' | 'profile';
+
+    // Derive Twitter creator handle from socialLinks (x or twitter type)
+    const twitterLink = socialLinks.find((l) => l.type === 'x' || l.type === 'twitter');
+    const twitterHandle = twitterLink?.url
+        ? `@${twitterLink.url.split('/').filter(Boolean).pop()}`
+        : '@mohammad_khayata';
+
+    // Build robots directive from CMS metaRobots string (e.g. "index, follow")
+    const robotsStr = seo?.metaRobots ?? 'index, follow';
+    const noIndex = robotsStr.includes('noindex');
+    const noFollow = robotsStr.includes('nofollow');
+
+    return {
+        title: {
+            default: title,
+            template: `%s | ${siteName}`,
+        },
+        description,
+        keywords: keywords.join(', '),
+        authors: [{ name: siteName, url: resume.contact.website }],
+        creator: siteName,
+        publisher: siteName,
+        applicationName: `${siteName} Portfolio`,
+        generator: 'Next.js',
+        referrer: 'origin-when-cross-origin',
+        formatDetection: { email: false, address: false, telephone: false },
+        alternates: { canonical: canonicalUrl },
+        openGraph: {
+            title: ogTitle,
+            description: ogDescription,
+            url: ogUrl,
+            siteName,
+            locale: 'en_US',
+            type: ogType,
+            images: [{ url: ogImageUrl, width: 1200, height: 630, alt: `${siteName} - Portfolio` }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: ogTitle,
+            description: ogDescription,
+            images: [ogImageUrl],
+            creator: twitterHandle,
+        },
+        robots: {
+            index: !noIndex,
+            follow: !noFollow,
+            nocache: false,
+            googleBot: {
+                index: !noIndex,
+                follow: !noFollow,
+                noimageindex: false,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
+        },
+    };
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Backend-driven JSON-LD — built from the About CMS entry
+// ─────────────────────────────────────────────────────────────────────────────
+
+export function generateStructuredDataFromAbout(about: AboutData) {
+    const siteName = about?.fullName ?? resume.contact.name;
+    const socialLinks = (about?.socialLinks ?? []) as SocialLinkComponent[];
+    const sameAs = socialLinks.map((l) => l.url).filter(Boolean);
+
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: `${siteName} Portfolio`,
+        url: BASE_URL,
+        description: (about?.seo as SeoComponent | undefined)?.metaDescription ?? resume.seo.description,
+        author: {
+            '@type': 'Person',
+            name: siteName,
+            jobTitle: 'Frontend Developer',
+            email: about?.email ?? resume.contact.email,
+            sameAs,
+        },
+        potentialAction: {
+            '@type': 'SearchAction',
+            target: `${BASE_URL}/search?q={search_term_string}`,
+            'query-input': 'required name=search_term_string',
+        },
+    };
 }

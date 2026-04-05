@@ -1,5 +1,4 @@
-import LightsGenerator from "@/app/components/LightsGenerator";
-import { BioShowcase } from "../components/Overview";
+ import { BioShowcase } from "../components/Overview";
 import { resume } from "@/data/resume";
 import { HeroSection } from "./components/HeroSection";
 import { WebDevSkillsSection } from "./components/WebDevSkillsSection";
@@ -7,6 +6,7 @@ import { AchievementsSection } from "./components/AchievementsSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { StatsSection } from "./components/StatsSection";
 import { ContactSection } from "./components/ContactSection";
+import { PricingSection } from "./components/PricingSection";
 import { generatePageMetadata } from "@/shared/lib/metaData";
 import { getAbout, getHome } from "@/services/home";
 export const metadata = generatePageMetadata({
@@ -28,6 +28,12 @@ const Home = async () => {
   const homeData = await getHome();
   const aboutData = await getAbout();
 
+  // export const getTechnologies = () =>
+  //     baseStrapiService.getCollection<TechnologyData>({ populate: "*", }, "api/technologies");
+  
+  // export const getPricings = () =>
+  //     baseStrapiService.getCollection<PricingData>({ populate: "*", }, "api/pricings");
+  
   return (
     <div className="page portfolio-page relative z-0 flex flex-col justify-center">
       <div className="page-overlay"></div>
@@ -44,6 +50,7 @@ const Home = async () => {
         <WebDevSkillsSection />
         <AchievementsSection />
         <ExperienceSection experiences={homeData?.data?.experiences} />
+        <PricingSection pricings={homeData?.data?.pricings} />
         <ContactSection />
       </main>
     </div>
