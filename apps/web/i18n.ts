@@ -1,6 +1,6 @@
 import { getRequestConfig, } from 'next-intl/server';
 import { createNavigation } from 'next-intl/navigation';
-export const localePrefix = 'always'; // Default
+export const localePrefix = 'as-needed'; // Default
 export default getRequestConfig(async ({ requestLocale }) => {
     const locale = await requestLocale || 'en'; // Fallback to 'en' if undefined
 
