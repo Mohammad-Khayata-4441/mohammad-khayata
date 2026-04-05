@@ -101,7 +101,7 @@ export default function ContactForm() {
           </Label>
           <Input
             id="phone"
-            name="phone"
+            name="phoneNumber"
             type="tel"
             disabled={isSubmitting}
             placeholder="+1 (555) 000-0000"
