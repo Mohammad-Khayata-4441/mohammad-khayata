@@ -114,7 +114,7 @@ export const HeroSection = (props: { overview: string }) => (
             >
               <Link
                 target="_blank"
-                href="https://docs.google.com/document/d/1gkeG0JCpvpfxjXxXd64PqcON_FVlfosGOxHVa52_wkY/edit?usp=sharing"
+                href="https://docs.google.com/document/d/1oyzw0rlFsEl9nspx99wPJ1jlOqGsZaQ1jd69LmDQqo0/edit?usp=sharing"
               >
                 <FileText className="w-4 h-4" />
                 Resume

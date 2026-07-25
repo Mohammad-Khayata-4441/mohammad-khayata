@@ -48,27 +48,22 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
   }));
 
   return (
-    <div className="px-4 md:px-0">
-      <div className="container max-w-(--breakpoint-xl) mx-auto">
+    <div className="px-4 md:px-0 w-full">
+      <div className="container mx-auto max-w-[var(--breakpoint-xl)]">
         <Tabs defaultValue="all" className="mb-8 section-aurora p-6 md:p-8 noise-overlay">
           <div className="flex items-center justify-between my-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground headline-glow">
               Latest Articles
             </h2>
-            {/* <TabsList className="glass-paper">
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="technology">Technology</TabsTrigger>
-              <TabsTrigger value="design">Design</TabsTrigger>
-              <TabsTrigger value="business">Business</TabsTrigger>
-            </TabsList> */}
+         
           </div>
 
-          <TabsContent value="all" className="mt-0">
+          <TabsContent value="all" className="mt-0 ">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {mappedBlogs.map((post, index) => (
                 <Card
                   key={index}
-                  className="overflow-hidden transition-all  interactive-card"
+                  className="overflow-hidden transition-all  interactive-card mx-auto"
                 >
                   <div className="aspect-video overflow-hidden">
                     <img
@@ -79,7 +74,7 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
                   </div>
                   <CardHeader className="p-4">
                     <div className="space-y-2">
-                      <div className="flex gap-2 flex-wrap-wrap">
+                      <div className="flex gap-2 flex-wrap">
                         {post.tags.map((t) => (
                           <Badge
                             key={t}
@@ -102,7 +97,7 @@ export default function BlogsList({ posts }: { posts: DevToPost[] }) {
                     </div>
                   </CardHeader>
                   <CardContent className="p-4 pt-0">
-                    <p className="line-clamp-3 text-sm text-muted-foreground">
+                    <p className="line-clamp-3 text-sm text-foreground/50">
                       {post.excerpt}
                     </p>
                   </CardContent>

@@ -13,7 +13,7 @@ export default async function BlogPage() {
     <div className="min-h-screen page relative z-0">
        <div className="page-overlay"></div>
 
-      <main className="container py-8 md:py-10">
+      <main className="container py-8 md:py-10 mx-auto">
         <section>
           <BlogsList posts={posts}></BlogsList>
         </section>
