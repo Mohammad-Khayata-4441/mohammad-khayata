@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "clickup": {
+      "type": "remote",
+      "url": "https://mcp.clickup.com/mcp",
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "github": {
+      "enabled": true,
+      "url": "https://api.githubcopilot.com/mcp/",
+      "authorization_token": "Bearer 5c82deaa90e5f43e54563bb2917fe470007151c5"
+    },
+    "unsplash": {
+      "type": "local",
+      "command": ["C:\\Users\\LOQ\\unsplash-mcp-server\\cmd\\server\\unsplash-mcp-server.exe"],
+      "enabled": true,
+      "environment": {
+        "UNSPLASH_ACCESS_KEY": "VgBRauidw0A_ePXMOMpNRWXT--4QpiQbg9vcYaH3dsU"
+      }
+    }
+  }
+}
+

@@ -10,6 +10,10 @@ const nextConfig = withNextIntl({
         hostname: "localhost",
       },
       {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
         protocol: NEXT_PUBLIC_STRAPI_URL?.startsWith("https") ? "https" : "http",
         hostname: NEXT_PUBLIC_STRAPI_URL?.split("//")[1]?.replace(/\/+$/, ""),
       }
