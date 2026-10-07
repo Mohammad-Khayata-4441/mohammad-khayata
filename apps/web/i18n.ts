@@ -15,5 +15,5 @@ export default getRequestConfig(async ({ requestLocale }) => {
 })
 export const locales = ['ar', 'en'] as const
 export const defaultLocale = 'en';
-export const { Link, redirect, usePathname, useRouter, } =
+export const { Link, redirect, permanentRedirect, usePathname, useRouter, } =
     createNavigation({ locales , localePrefix:'as-needed', defaultLocale});

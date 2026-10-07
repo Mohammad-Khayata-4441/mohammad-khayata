@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticRoute("/blog", { changeFrequency: "weekly", priority: 0.8 }),
     ...staticRoute("/experience", { changeFrequency: "monthly", priority: 0.75 }),
     ...staticRoute("/contact", { changeFrequency: "monthly", priority: 0.7 }),
+    ...staticRoute("/profile", { changeFrequency: "monthly", priority: 0.65 }),
   ];
 
   // ── Dynamic: projects from CMS ──────────────────────────────────────────────

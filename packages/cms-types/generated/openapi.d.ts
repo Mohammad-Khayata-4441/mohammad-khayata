@@ -899,7 +899,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.016Z
+             * @default 2026-10-07T21:31:06.116Z
              */
             publishedAt: string;
             related: unknown;
@@ -966,7 +966,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.042Z
+             * @default 2026-10-07T21:31:06.157Z
              */
             publishedAt: string;
             /** @description A relational field */
@@ -1009,7 +1009,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.043Z
+             * @default 2026-10-07T21:31:06.159Z
              */
             publishedAt: string;
             /** @description A media field */
@@ -1036,7 +1036,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.041Z
+             * @default 2026-10-07T21:31:06.156Z
              */
             publishedAt: string;
             /** @description A relational field */
@@ -1067,7 +1067,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.044Z
+             * @default 2026-10-07T21:31:06.161Z
              */
             publishedAt: string;
             /** @description A relational field */
@@ -1104,7 +1104,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.040Z
+             * @default 2026-10-07T21:31:06.154Z
              */
             publishedAt: string;
             /** @description A media field */
@@ -1145,7 +1145,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.054Z
+             * @default 2026-10-07T21:31:06.195Z
              */
             publishedAt: string;
             /** @description A relational field */
@@ -1170,7 +1170,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.053Z
+             * @default 2026-10-07T21:31:06.194Z
              */
             publishedAt: string;
             /** @description A relational field */
@@ -1205,7 +1205,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.076Z
+             * @default 2026-10-07T21:31:06.257Z
              */
             publishedAt: string;
             /** @description A media field */
@@ -1228,7 +1228,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.079Z
+             * @default 2026-10-07T21:31:06.262Z
              */
             publishedAt: string;
             /** @description A relational field */
@@ -1255,7 +1255,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.077Z
+             * @default 2026-10-07T21:31:06.260Z
              */
             publishedAt: string;
             /** @description A media field */
@@ -1290,7 +1290,7 @@ export interface components {
             updatedAt?: string;
             /**
              * @description A datetime field
-             * @default 2026-09-17T01:17:21.080Z
+             * @default 2026-10-07T21:31:06.265Z
              */
             publishedAt: string;
             /** @description A relational field */
@@ -1367,7 +1367,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.013Z
+                             * @default 2026-10-07T21:31:06.108Z
                              */
                             publishedAt: string;
                             /** @description A component field */
@@ -1460,7 +1460,7 @@ export interface operations {
                         professionalGoals?: unknown[];
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.021Z
+                         * @default 2026-10-07T21:31:06.121Z
                          */
                         publishedAt?: string;
                         /** @description A component field */
@@ -1520,7 +1520,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.022Z
+                             * @default 2026-10-07T21:31:06.123Z
                              */
                             publishedAt: string;
                             /** @description A component field */
@@ -1629,7 +1629,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.024Z
+                             * @default 2026-10-07T21:31:06.125Z
                              */
                             publishedAt: string;
                             /** @description A component field */
@@ -1751,7 +1751,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.027Z
+                             * @default 2026-10-07T21:31:06.130Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -1832,7 +1832,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.032Z
+                         * @default 2026-10-07T21:31:06.136Z
                          */
                         publishedAt: string;
                         /** @description A media field */
@@ -1880,7 +1880,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.032Z
+                             * @default 2026-10-07T21:31:06.138Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -1987,7 +1987,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.030Z
+                             * @default 2026-10-07T21:31:06.133Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -2070,7 +2070,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.034Z
+                         * @default 2026-10-07T21:31:06.140Z
                          */
                         publishedAt?: string;
                         /** @description A media field */
@@ -2118,7 +2118,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.035Z
+                             * @default 2026-10-07T21:31:06.142Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -2220,7 +2220,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.036Z
+                             * @default 2026-10-07T21:31:06.146Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -2330,7 +2330,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.039Z
+                             * @default 2026-10-07T21:31:06.151Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -2399,7 +2399,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.047Z
+                         * @default 2026-10-07T21:31:06.172Z
                          */
                         publishedAt: string;
                         /** @description A relational field */
@@ -2435,7 +2435,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.047Z
+                             * @default 2026-10-07T21:31:06.173Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -2530,7 +2530,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.046Z
+                             * @default 2026-10-07T21:31:06.167Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -2601,7 +2601,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.048Z
+                         * @default 2026-10-07T21:31:06.175Z
                          */
                         publishedAt?: string;
                         /** @description A relational field */
@@ -2637,7 +2637,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.049Z
+                             * @default 2026-10-07T21:31:06.176Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -2727,7 +2727,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.050Z
+                             * @default 2026-10-07T21:31:06.187Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -2837,7 +2837,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.053Z
+                             * @default 2026-10-07T21:31:06.193Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -2908,7 +2908,7 @@ export interface operations {
                         phoneNumber?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.056Z
+                         * @default 2026-10-07T21:31:06.204Z
                          */
                         publishedAt: string;
                         /**
@@ -2949,7 +2949,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.057Z
+                             * @default 2026-10-07T21:31:06.205Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -3046,7 +3046,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.055Z
+                             * @default 2026-10-07T21:31:06.200Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -3119,7 +3119,7 @@ export interface operations {
                         phoneNumber?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.058Z
+                         * @default 2026-10-07T21:31:06.209Z
                          */
                         publishedAt?: string;
                         /**
@@ -3160,7 +3160,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.058Z
+                             * @default 2026-10-07T21:31:06.210Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -3252,7 +3252,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.059Z
+                             * @default 2026-10-07T21:31:06.212Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -3372,7 +3372,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.065Z
+                             * @default 2026-10-07T21:31:06.220Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -3459,7 +3459,7 @@ export interface operations {
                         overview?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.069Z
+                         * @default 2026-10-07T21:31:06.233Z
                          */
                         publishedAt: string;
                         /** @description A media field */
@@ -3513,7 +3513,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.069Z
+                             * @default 2026-10-07T21:31:06.236Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -3626,7 +3626,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.067Z
+                             * @default 2026-10-07T21:31:06.227Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -3715,7 +3715,7 @@ export interface operations {
                         overview?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.071Z
+                         * @default 2026-10-07T21:31:06.243Z
                          */
                         publishedAt?: string;
                         /** @description A media field */
@@ -3769,7 +3769,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.072Z
+                             * @default 2026-10-07T21:31:06.244Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -3877,7 +3877,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.074Z
+                             * @default 2026-10-07T21:31:06.247Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -3967,7 +3967,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.075Z
+                             * @default 2026-10-07T21:31:06.255Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -4044,7 +4044,7 @@ export interface operations {
                         counts?: unknown;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.081Z
+                         * @default 2026-10-07T21:31:06.268Z
                          */
                         publishedAt?: string;
                         /** @description A relational field */
@@ -4088,7 +4088,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.082Z
+                             * @default 2026-10-07T21:31:06.270Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -4181,7 +4181,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.083Z
+                             * @default 2026-10-07T21:31:06.272Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -4275,7 +4275,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.085Z
+                             * @default 2026-10-07T21:31:06.276Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -4338,7 +4338,7 @@ export interface operations {
                     data: {
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.085Z
+                         * @default 2026-10-07T21:31:06.278Z
                          */
                         publishedAt?: string;
                         /** @description A relational field */
@@ -4368,7 +4368,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.085Z
+                             * @default 2026-10-07T21:31:06.279Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -4447,7 +4447,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.086Z
+                             * @default 2026-10-07T21:31:06.283Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -4557,7 +4557,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.088Z
+                             * @default 2026-10-07T21:31:06.288Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -4634,7 +4634,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.091Z
+                         * @default 2026-10-07T21:31:06.293Z
                          */
                         publishedAt: string;
                         /** @description A media field */
@@ -4678,7 +4678,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.091Z
+                             * @default 2026-10-07T21:31:06.294Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -4781,7 +4781,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.090Z
+                             * @default 2026-10-07T21:31:06.290Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -4860,7 +4860,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.092Z
+                         * @default 2026-10-07T21:31:06.297Z
                          */
                         publishedAt?: string;
                         /** @description A media field */
@@ -4904,7 +4904,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.093Z
+                             * @default 2026-10-07T21:31:06.299Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -5002,7 +5002,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.095Z
+                             * @default 2026-10-07T21:31:06.302Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -5120,7 +5120,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.097Z
+                             * @default 2026-10-07T21:31:06.311Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -5193,7 +5193,7 @@ export interface operations {
                         features?: unknown;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.100Z
+                         * @default 2026-10-07T21:31:06.320Z
                          */
                         publishedAt: string;
                         /**
@@ -5236,7 +5236,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.100Z
+                             * @default 2026-10-07T21:31:06.320Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -5335,7 +5335,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.099Z
+                             * @default 2026-10-07T21:31:06.318Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -5410,7 +5410,7 @@ export interface operations {
                         features?: unknown;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.101Z
+                         * @default 2026-10-07T21:31:06.322Z
                          */
                         publishedAt?: string;
                         /**
@@ -5453,7 +5453,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.102Z
+                             * @default 2026-10-07T21:31:06.323Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -5547,7 +5547,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.103Z
+                             * @default 2026-10-07T21:31:06.325Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -5667,7 +5667,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.110Z
+                             * @default 2026-10-07T21:31:06.330Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -5762,7 +5762,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.115Z
+                         * @default 2026-10-07T21:31:06.336Z
                          */
                         publishedAt: string;
                         /** @description A media field */
@@ -5827,7 +5827,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.116Z
+                             * @default 2026-10-07T21:31:06.338Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -5948,7 +5948,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.113Z
+                             * @default 2026-10-07T21:31:06.333Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -6045,7 +6045,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.118Z
+                         * @default 2026-10-07T21:31:06.342Z
                          */
                         publishedAt?: string;
                         /** @description A media field */
@@ -6110,7 +6110,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.119Z
+                             * @default 2026-10-07T21:31:06.344Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -6226,7 +6226,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.121Z
+                             * @default 2026-10-07T21:31:06.350Z
                              */
                             publishedAt: string;
                             /** @description A media field */
@@ -6348,7 +6348,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.123Z
+                             * @default 2026-10-07T21:31:06.354Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -6417,7 +6417,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.125Z
+                         * @default 2026-10-07T21:31:06.358Z
                          */
                         publishedAt: string;
                         /** @description A relational field */
@@ -6453,7 +6453,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.126Z
+                             * @default 2026-10-07T21:31:06.359Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -6548,7 +6548,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.125Z
+                             * @default 2026-10-07T21:31:06.356Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -6619,7 +6619,7 @@ export interface operations {
                         slug?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.127Z
+                         * @default 2026-10-07T21:31:06.360Z
                          */
                         publishedAt?: string;
                         /** @description A relational field */
@@ -6655,7 +6655,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.127Z
+                             * @default 2026-10-07T21:31:06.361Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -6745,7 +6745,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.128Z
+                             * @default 2026-10-07T21:31:06.362Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -6827,7 +6827,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.129Z
+                             * @default 2026-10-07T21:31:06.364Z
                              */
                             publishedAt: string;
                         };
@@ -6888,7 +6888,7 @@ export interface operations {
                     data: {
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.130Z
+                         * @default 2026-10-07T21:31:06.364Z
                          */
                         publishedAt?: string;
                     };
@@ -6916,7 +6916,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.130Z
+                             * @default 2026-10-07T21:31:06.365Z
                              */
                             publishedAt: string;
                         };
@@ -6993,7 +6993,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.131Z
+                             * @default 2026-10-07T21:31:06.366Z
                              */
                             publishedAt: string;
                         };
@@ -7097,7 +7097,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.132Z
+                             * @default 2026-10-07T21:31:06.369Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7166,7 +7166,7 @@ export interface operations {
                         description?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.134Z
+                         * @default 2026-10-07T21:31:06.374Z
                          */
                         publishedAt: string;
                         /** @description A relational field */
@@ -7202,7 +7202,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.135Z
+                             * @default 2026-10-07T21:31:06.375Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7297,7 +7297,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.134Z
+                             * @default 2026-10-07T21:31:06.373Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7368,7 +7368,7 @@ export interface operations {
                         description?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.136Z
+                         * @default 2026-10-07T21:31:06.376Z
                          */
                         publishedAt?: string;
                         /** @description A relational field */
@@ -7404,7 +7404,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.136Z
+                             * @default 2026-10-07T21:31:06.377Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7494,7 +7494,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.137Z
+                             * @default 2026-10-07T21:31:06.380Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7600,7 +7600,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.139Z
+                             * @default 2026-10-07T21:31:06.385Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7665,7 +7665,7 @@ export interface operations {
                         title?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.141Z
+                         * @default 2026-10-07T21:31:06.394Z
                          */
                         publishedAt: string;
                         /** @description A relational field */
@@ -7697,7 +7697,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.141Z
+                             * @default 2026-10-07T21:31:06.394Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7788,7 +7788,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.140Z
+                             * @default 2026-10-07T21:31:06.389Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7855,7 +7855,7 @@ export interface operations {
                         title?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.142Z
+                         * @default 2026-10-07T21:31:06.395Z
                          */
                         publishedAt?: string;
                         /** @description A relational field */
@@ -7887,7 +7887,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.142Z
+                             * @default 2026-10-07T21:31:06.395Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -7973,7 +7973,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.143Z
+                             * @default 2026-10-07T21:31:06.396Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -8077,7 +8077,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.145Z
+                             * @default 2026-10-07T21:31:06.398Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -8148,7 +8148,7 @@ export interface operations {
                         name?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.151Z
+                         * @default 2026-10-07T21:31:06.400Z
                          */
                         publishedAt: string;
                         /** @description A relational field */
@@ -8189,7 +8189,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.151Z
+                             * @default 2026-10-07T21:31:06.400Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -8286,7 +8286,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.150Z
+                             * @default 2026-10-07T21:31:06.399Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -8359,7 +8359,7 @@ export interface operations {
                         name?: string;
                         /**
                          * @description A datetime field
-                         * @default 2026-09-17T01:17:21.152Z
+                         * @default 2026-10-07T21:31:06.401Z
                          */
                         publishedAt?: string;
                         /** @description A relational field */
@@ -8400,7 +8400,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.153Z
+                             * @default 2026-10-07T21:31:06.402Z
                              */
                             publishedAt: string;
                             /** @description A relational field */
@@ -8492,7 +8492,7 @@ export interface operations {
                             updatedAt?: string;
                             /**
                              * @description A datetime field
-                             * @default 2026-09-17T01:17:21.154Z
+                             * @default 2026-10-07T21:31:06.403Z
                              */
                             publishedAt: string;
                             /** @description A relational field */

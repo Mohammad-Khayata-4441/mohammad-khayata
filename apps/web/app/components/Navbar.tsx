@@ -1,5 +1,5 @@
 "use client";
-import { Link } from "@/i18n";
+import { Link, usePathname } from "@/i18n";
 import { useActiveLink } from "@/shared/hooks/useActivePath";
 import { Newspaper } from "lucide-react";
 import { SlidingCapsuleNav } from "@/components/satisui/sliding-capsule-nav";
@@ -15,6 +15,11 @@ import { CiGrid41, CiHome, CiPhone, CiUser } from "react-icons/ci";
 
 const MyComponent: React.FC = () => {
   const isActivePath = useActiveLink();
+  const pathname = usePathname();
+
+  if (pathname === "/profile") {
+    return null;
+  }
 
   const navLinks = [
     {
