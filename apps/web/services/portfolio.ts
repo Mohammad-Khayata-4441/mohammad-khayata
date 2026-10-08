@@ -16,4 +16,19 @@ const portfolioService = new StrapiService<PortfolioData>(
 
 /** Fetch the single portfolio resource. */
 export const getPortfolio = (params?: Parameters<typeof portfolioService.getSingleResource>[0]) =>
-    portfolioService.getSingleResource<PortfolioData>(params ?? { populate: { projects: { populate: "*" } } });
+    portfolioService.getSingleResource<PortfolioData>(
+        params ?? {
+            populate: {
+                projects: {
+                    populate: {
+                        cover: { fields: ["url", "width", "height", "alternativeText"] },
+                        media: { fields: ["url", "width", "height", "alternativeText"] },
+                        technologies: {
+                            fields: ["name", "documentId"],
+                            populate: { logo: { fields: ["url", "width", "height"] } },
+                        },
+                    },
+                },
+            },
+        },
+    );

@@ -30,6 +30,7 @@ const FALLBACK_OVERVIEW =
 const FALLBACK_RESUME_URL =
   "https://docs.google.com/document/d/1oyzw0rlFsEl9nspx99wPJ1jlOqGsZaQ1jd69LmDQqo0/edit?usp=sharing";
 const FALLBACK_PHONE = "+963956954441";
+const PORTRAIT_SRC = "/assets/portrait-5.png";
 const FALLBACK_LINKS = {
   linkedin: "https://www.linkedin.com/in/mohammad-khayata-9169801a9",
   github: "https://github.com/Mohammad-Khayata-4441",
@@ -304,17 +305,23 @@ export default async function ProfilePage() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/80 to-transparent" />
 
         <div className="flex flex-col items-center text-center">
-          <div className="relative mb-5">
+          <a
+            href={PORTRAIT_SRC}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`View photo of ${fullName}`}
+            className="relative mb-5 block rounded-full outline-none transition-transform duration-200 hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+          >
             <div className="absolute -inset-2 rounded-full border border-primary/20" />
             <Image
-              src="/assets/portrait-5.png"
-              alt={fullName}
+              src={PORTRAIT_SRC}
+              alt=""
               width={830}
               height={1069}
               priority
               className="relative size-32 rounded-full border-2 border-primary/70 object-cover object-[center_18%] p-1"
             />
-          </div>
+          </a>
 
           <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-[34px]">
             {fullName}

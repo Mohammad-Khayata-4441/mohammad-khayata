@@ -7,7 +7,7 @@ import { PhotoSlider } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { type Project } from "@/services/portfolio";
 import { strapiMedia } from "@/shared/utils/strapiMedia";
-import { ArrowUpRight, Github, ExternalLink, Images } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink, Images, Layers } from "lucide-react";
 import { motion } from "motion/react";
 
 const coverUrl = (item: Project) =>
@@ -89,27 +89,29 @@ export default function PortfolioItem({
         {/* Tech badges */}
         {item.technologies && item.technologies.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-2">
-            {item.technologies.map((t) =>
-              t.logo?.url ? (
-                <div
-                  key={t.documentId ?? t.id}
-                  className="flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm px-3 py-1.5 transition-colors hover:bg-white/10"
-                >
+            {item.technologies.map((t) => (
+              <div
+                key={t.documentId ?? t.id}
+                className="flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm px-3 py-1.5 transition-colors hover:bg-white/10"
+              >
+                {t.logo?.url ? (
                   <Image
                     alt={t.name ?? String(t.id)}
-                    className="rounded-sm"
+                    className="rounded-sm object-contain"
                     width={16}
                     height={16}
-                    src={t.logo.url}
+                    src={strapiMedia(t.logo.url)}
                   />
-                  {t.name && (
-                    <span className="text-[11px] sm:text-xs text-white/70 font-medium">
-                      {t.name}
-                    </span>
-                  )}
-                </div>
-              ) : null
-            )}
+                ) : (
+                  <Layers className="w-4 h-4 text-white/40" />
+                )}
+                {t.name && (
+                  <span className="text-[11px] sm:text-xs text-white/70 font-medium">
+                    {t.name}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         )}
 
